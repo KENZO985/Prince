@@ -8,8 +8,10 @@ Welcome to the source code for my personal web-based portfolio: **Welcome to My 
 
 ## 📁 Project Structure
 
-📦 root/
+root/
 ├── index.html
+├── about.html
+├── projects.html
 ├── style.css
 ├── script.js
 ├── favicon.png
