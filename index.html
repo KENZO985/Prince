@@ -2,85 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prince Johnson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prince Johnson | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <script src="script.js" defer></script>
+  <link rel="icon" href="favicon.png" type="image/png" />
 </head>
 <body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="navbar-left">Prince Johnson</div>
+    <nav class="navbar-right">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#games">Games</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="nav-left">Prince Johnson</div>
-    <ul class="nav-right">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#games">Games</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section id="home" class="fade-in">
-    <h1 class="hero-heading">Hey, I’m Prince Johnson</h1>
-    <p class="hero-subheading">Web Game Developer & Tech Enthusiast</p>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m passionate about building web games using HTML, CSS, and JavaScript.</p>
-  </section>
-
-  <!-- GAMES SECTION -->
-  <section id="games" class="hidden">
-    <h2>Games</h2>
-
-    <h3>Tic Tac Toe</h3>
-    <div class="board" id="ticBoard">
-      <div class="cell" data-cell></div><div class="cell" data-cell></div><div class="cell" data-cell></div>
-      <div class="cell" data-cell></div><div class="cell" data-cell></div><div class="cell" data-cell></div>
-      <div class="cell" data-cell></div><div class="cell" data-cell></div><div class="cell" data-cell></div>
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to My World</h1>
+      <p>I'm <strong>Prince Johnson</strong></p>
     </div>
-    <p id="ticMessage" class="message"></p>
-
-    <h3>Memory Match</h3>
-    <div class="memory-game" id="memoryGame"></div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="page-section active">
-  <div class="contact-container">
+  <!-- About Section -->
+  <section id="about" class="section hidden">
+    <h2>About Me</h2>
+    <p>This is the about section.</p>
+  </section>
+
+  <!-- Games Section -->
+  <section id="games" class="section hidden">
+    <h2>My Games</h2>
+    <p>Game content appears here when clicked from navbar.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section hidden">
     <h2>CONTACTS</h2>
+    <p><strong>Email:</strong> prince308j@gmail.com</p>
+    <p><strong>LinkedIn:</strong> <a href="#">LinkedIn</a></p>
+    <p><strong>Instagram:</strong> @prince_308_j</p>
+    <p><strong>GitHub:</strong> <a href="#">GitHub</a></p>
+    <footer>© 2025 <strong style="color: white;">Prince Johnson</strong></footer>
+  </section>
 
-    <ul class="contact-list">
-      <li>
-        <img src="https://img.icons8.com/ios-filled/24/email.png" alt="Email Icon" />
-        <a href="mailto:prince308j@gmail.com">prince308j@gmail.com</a>
-      </li>
-      <li>
-        <img src="https://img.icons8.com/ios-filled/24/linkedin.png" alt="LinkedIn Icon" />
-        <a href="#">LinkedIn</a>
-      </li>
-      <li>
-        <img src="https://img.icons8.com/ios-filled/24/instagram-new.png" alt="Instagram Icon" />
-        <a href="#">@prince_308_j</a>
-      </li>
-      <li>
-        <img src="https://img.icons8.com/ios-filled/24/github.png" alt="GitHub Icon" />
-        <a href="#">GitHub</a>
-      </li>
-    </ul>
-
-  </div>
-</section>
-
-
-  <!-- FOOTER -->
-  <footer class="contact-footer">
-      <p>© 2025 <strong>Prince Johnson</strong></p>
-    </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
