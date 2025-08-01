@@ -169,6 +169,14 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+#contact p a {
+  color: #0066cc;
+  text-decoration: none;
+}
+#contact p a:hover {
+  text-decoration: underline;
+}
+
 
 /* Footer */
 footer {
