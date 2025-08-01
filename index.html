@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
-        /* Keep any very specific, small CSS overrides or animations here if you prefer,
-           or move them entirely to style.css */
+        /* This rule must be present and correctly defined for sections to hide */
         .hidden-section {
             display: none;
         }
@@ -121,68 +120,66 @@
     </section>
 
     <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-20 md:py-32 flex flex-col items-center justify-center">
-    <h2 class="text-4xl md:text-5xl font-bold mb-10 md:mb-16 text-white uppercase tracking-wider">CONTACTS</h2>
+        <h2 class="text-4xl md:text-5xl font-bold mb-10 md:mb-16 text-white uppercase tracking-wider">CONTACTS</h2>
 
-    <div class="flex flex-col items-center space-y-8 md:space-y-10 text-white text-lg md:text-xl">
-        <a href="mailto:princejohnson@example.com" class="contact-item hover:text-orange-400 transition-colors duration-300">
-            <i class="fas fa-envelope mr-3 text-2xl md:text-3xl"></i>
-            princejohnson@example.com
-        </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
-            <i class="fab fa-linkedin mr-3 text-2xl md:text-3xl"></i>
-            LinkedIn
-        </a>
-        <a href="https://instagram.com/yourinstagram" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
-            <i class="fab fa-instagram mr-3 text-2xl md:text-3xl"></i>
-            @ _princejohnson_
-        </a>
-        <a href="https://github.com/KENZO985" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
-            <i class="fab fa-github mr-3 text-2xl md:text-3xl"></i>
-            GitHub
-        </a>
+        <div class="flex flex-col items-center space-y-8 md:space-y-10 text-white text-lg md:text-xl">
+            <a href="mailto:princejohnson@example.com" class="contact-item hover:text-orange-400 transition-colors duration-300">
+                <i class="fas fa-envelope mr-3 text-2xl md:text-3xl"></i>
+                princejohnson@example.com
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+                <i class="fab fa-linkedin mr-3 text-2xl md:text-3xl"></i>
+                LinkedIn
+            </a>
+            <a href="https://instagram.com/yourinstagram" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+                <i class="fab fa-instagram mr-3 text-2xl md:text-3xl"></i>
+                @ _princejohnson_
+            </a>
+            <a href="https://github.com/KENZO985" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+                <i class="fab fa-github mr-3 text-2xl md:text-3xl"></i>
+                GitHub
+            </a>
         </div>
-</section>
+    </section>
 
-
-    <footer class="bg-black py-6 text-center text-gray-400 text-sm">
-        &copy; <span id="current-year"></span> Prince Johnson. All rights reserved.
+    <footer class="bg-blue-950 py-6 text-center text-gray-400 text-sm">
+        &copy; <span id="current-year"></span> Prince Johnson.
     </footer>
 
-
     <script>
-    const sections = ['home', 'about', 'projects', 'contact'];
+        const sections = ['home', 'about', 'projects', 'contact'];
 
-    function showSection(id) {
-        // Hide ALL sections first
-        sections.forEach(secId => {
-            const sectionElement = document.getElementById(secId);
-            if (sectionElement) {
-                sectionElement.classList.add('hidden-section');
+        function showSection(id) {
+            // Hide ALL sections first
+            sections.forEach(secId => {
+                const sectionElement = document.getElementById(secId);
+                if (sectionElement) {
+                    sectionElement.classList.add('hidden-section');
+                }
+            });
+
+            // Then, show ONLY the target section
+            const targetSection = document.getElementById(id);
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.pushState(null, '', `#${id}`);
             }
+        }
+
+        // On page load, check for URL hash to display the correct section
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && sections.includes(initialHash)) {
+                showSection(initialHash);
+            } else {
+                showSection('home'); // Default to home if no valid hash
+            }
+
+            // Update footer copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
         });
-
-        // Then, show ONLY the target section
-        const targetSection = document.getElementById(id);
-        if (targetSection) {
-            targetSection.classList.remove('hidden-section');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            history.pushState(null, '', `#${id}`);
-        }
-    }
-
-    // On page load, check for URL hash to display the correct section
-    document.addEventListener('DOMContentLoaded', () => {
-        const initialHash = window.location.hash.substring(1);
-        if (initialHash && sections.includes(initialHash)) {
-            showSection(initialHash);
-        } else {
-            showSection('home'); // Default to home if no valid hash
-        }
-
-        // Update footer copyright year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    });
-</script>
+    </script>
     <script src="script.js"></script>
 
 </body>
