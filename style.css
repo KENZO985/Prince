@@ -29,7 +29,7 @@ nav {
 .nav-left {
   color: white;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .nav-right {
@@ -41,39 +41,41 @@ nav {
 .nav-right li a {
   text-decoration: none;
   color: white;
-  font-weight: 500;
+  font-weight: normal;
   transition: color 0.3s;
-  text-transform: none;
 }
 
 .nav-right li a:hover {
   color: orange;
 }
 
-/* Hero */
+/* Hero Section */
 #home {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  background: linear-gradient(135deg, #222 0%, #333 100%);
-  color: #fff;
-  padding: 0 20px;
+  padding: 100px 20px;
   text-align: center;
+  background: #222;
+  color: #fff;
 }
 
-.hero-heading {
-  font-size: 3rem;
+#home h1 {
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: #ffa500;
 }
 
-.hero-subheading {
+#home h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1.2rem;
+}
+
+#home h3 {
   font-size: 1.5rem;
   color: #ccc;
 }
-
 
 /* Sections */
 section {
@@ -135,70 +137,63 @@ h2 {
   cursor: pointer;
 }
 
-/* Contact */
+/* Contact Section */
 #contact {
+  background: #222;
+  color: #fff;
+  padding: 4rem 2rem;
   text-align: center;
-  background: #111;
-  color: white;
-  padding: 2rem;
 }
 
-#contact a {
+#contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
   color: #ffa500;
-  text-decoration: none;
-  display: block;
-  margin: 0.5rem 0;
 }
 
-#contact a:hover {
-  text-decoration: underline;
+#contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+}
+
+#contact ul li {
+  margin-bottom: 0.5rem;
+}
+
+#contact ul li span {
+  font-weight: bold;
+  color: #fff;
 }
 
 /* Footer */
 footer {
   background: #111;
   color: white;
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9rem;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
 
-footer .left {
+footer .footer-left {
   font-weight: bold;
   color: white;
 }
 
-footer .right {
-  text-transform: none;
+footer .footer-right {
+  display: flex;
+  gap: 1.5rem;
 }
 
-/* Hero Text */
-.hero-heading {
-  font-size: 2.5rem;
-  font-weight: bold;
+footer .footer-right a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .footer-right a:hover {
   color: #ffa500;
-  margin-bottom: 1rem;
-}
-
-.hero-subheading {
-  font-size: 1.5rem;
-  color: #ccc;
-  margin-top: 0.5rem;
-}
-/* Animation */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.5s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.hidden {
-  display: none;
 }
