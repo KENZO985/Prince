@@ -71,6 +71,26 @@
 <footer>
   <p>&copy; 2025 Prince Johnson</p>
 </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gamesLink = document.querySelector('a[href="#games"]');
+    const gamesSection = document.getElementById('games');
+
+    // Hide games initially
+    gamesSection.style.display = 'none';
+
+    gamesLink.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent jump
+      gamesSection.style.display = gamesSection.style.display === 'none' ? 'block' : 'none';
+
+      // Scroll smoothly into view
+      if (gamesSection.style.display === 'block') {
+        gamesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
 
 </body>
 </html>
