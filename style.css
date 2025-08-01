@@ -1,77 +1,207 @@
-/* Reset & Typography */
-* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
-body { font-family:'Segoe UI', sans-serif; background:#f9f9f9; color:#333; }
+/* style.css */
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+}
 
 /* Navbar */
 nav {
-  background:#111; padding:1rem 2rem; position:sticky; top:0; z-index:1000;
-  display:flex; justify-content:space-between; align-items:center;
+  background-color: #111;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.nav-left { color:white; font-weight:bold; font-size:1.5rem; }
-.nav-right { display:flex; list-style:none; gap:1.5rem; }
+
+.nav-left {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-right {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
 .nav-right li a {
-  color:white; text-decoration:none; font-weight:normal; transition:color .3s;
+  text-decoration: none;
+  color: white;
+  font-weight: normal;
+  transition: color 0.3s;
 }
-.nav-right li a:hover { color:orange; }
 
-/* Hero */
+.nav-right li a:hover {
+  color: orange;
+}
+
+/* Hero Section */
 #home {
-  min-height:80vh; display:flex; flex-direction:column;
-  justify-content:center; align-items:center; background:#222;
-  color:#fff; text-align:center; padding:0 20px;
+  padding: 100px 20px;
+  text-align: center;
+  background: #222;
+  color: #fff;
 }
-.hero-heading { font-size:3rem; color:orange; margin-bottom:.5rem; }
-.hero-subheading { font-size:1.5rem; color:#ccc; }
 
-/* Fade-in Animation */
-.fade-in { opacity:0; animation:fadeIn 1.5s ease-in-out forwards; }
-@keyframes fadeIn { to{ opacity:1; } }
+#home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffa500;
+}
+
+#home h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1.2rem;
+}
+
+#home h3 {
+  font-size: 1.5rem;
+  color: #ccc;
+}
 
 /* Sections */
-section { padding:4rem 2rem; max-width:800px; margin:auto; }
-h2 { font-size:2rem; text-align:center; margin-bottom:1rem; }
+section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
 /* Tic Tac Toe */
-.board { display:grid; grid-template-columns:repeat(3,100px); gap:10px; margin:20px auto; }
+#games {
+  display: none;
+}
+
+#games.active {
+  display: block;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
 .cell {
-  width:100px; height:100px; background:#fff; border:2px solid #000;
-  font-size:2rem; display:flex; align-items:center; justify-content:center; cursor:pointer;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 2px solid #000;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-.message { text-align:center; font-weight:bold; margin-top:10px; }
 
-/* Memory Match */
+.message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Memory Game */
 .memory-game {
-  display:grid; grid-template-columns:repeat(4,70px); gap:15px; justify-content:center; margin-top:20px;
-}
-.memory-card {
-  width:70px; height:70px; font-size:2rem; background:#ddd;
-  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-/* Contact */
-#contact {
-  background:#222; color:#fff; text-align:center; padding:4rem 2rem;
+.memory-card {
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-#contact h2 { color:orange; margin-bottom:2rem; font-size:2.2rem; }
-#contact ul { list-style:none; padding:0; font-size:1.1rem; line-height:2.2rem; }
-#contact ul li { margin-bottom:.5rem; }
-#contact ul li span { font-weight:bold; color:#fff; }
+
+/* Contact Section */
+#contact {
+  background: #222;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #ffa500;
+}
+
+#contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 2.2rem;
+}
+
+#contact ul li {
+  margin-bottom: 0.5rem;
+}
+
+#contact ul li span {
+  font-weight: bold;
+  color: #fff;
+}
 
 /* Footer */
 footer {
-  background:#111; color:#fff; padding:1rem 2rem;
-  display:flex; justify-content:space-between; align-items:center;
-  flex-wrap:wrap; font-size:.9rem;
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
 }
-.footer-right a {
-  color:#fff; text-decoration:none; margin-left:1.5rem;
-}
-.footer-right a:hover { color:orange; }
 
-/* Mobile */
-@media(max-width:768px){
-  .hero-heading { font-size:2rem; }
-  .hero-subheading { font-size:1.1rem; }
-  nav { flex-direction:column; gap:10px; }
-  .nav-right { flex-direction:column; gap:10px; }
+footer .footer-left {
+  font-weight: bold;
+  color: white;
+}
+
+footer .footer-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+footer .footer-right a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .footer-right a:hover {
+  color: #ffa500;
 }
