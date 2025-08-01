@@ -1,227 +1,206 @@
 /* style.css */
 
-/* Base Reset */
+/* Base Reset (Keep this as it applies broadly) */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  background-color: #f9f9f9;
-  color: #333;
+/* Glassmorphism Effect - Apply this class to cards/boxes where you want the effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.08); /* Semi-transparent white */
+    backdrop-filter: blur(12px); /* Frosted glass blur */
+    -webkit-backdrop-filter: blur(12px); /* Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle border */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover */
 }
 
-/* Navbar */
-nav {
-  background-color: #111;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.glass-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
-.nav-left {
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
+
+/* Project Grid Container */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2.5rem; /* Space between cards */
+    max-width: 1200px; /* Max width of the grid */
+    margin: 0 auto; /* Center the grid */
+    padding-bottom: 3rem; /* Padding at bottom */
 }
 
-.nav-right {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
+/* Individual Project Card Styles */
+.project-card {
+    padding: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures buttons are at bottom */
 }
 
-.nav-right li a {
-  text-decoration: none;
-  color: white;
-  font-weight: normal;
-  transition: color 0.3s;
+.project-card img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    object-fit: cover; /* Ensures images cover area */
 }
 
-.nav-right li a:hover {
-  color: orange;
+.project-card h3 {
+    font-size: 1.8rem; /* Slightly larger title */
+    margin-bottom: 0.75rem;
+    color: #ffa500; /* Orange color for titles */
 }
 
-/* Hero Section */
-#home {
-  padding: 100px 20px;
-  text-align: center;
-  background: #222;
-  color: #fff;
+.project-card p {
+    font-size: 1rem;
+    color: #cbd5e1; /* Light gray text */
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Allows paragraph to take available space */
 }
 
-#home h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #ffa500;
+.project-card .project-links {
+    margin-top: 1rem; /* Space above links */
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
-#home h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.project-card .project-links a {
+    display: inline-block;
+    background-color: #374151; /* Darker gray for buttons */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#home p {
-  font-size: 1.2rem;
+.project-card .project-links a:hover {
+    background-color: #f97316; /* Orange hover for buttons */
+    transform: translateY(-2px); /* Slight lift on hover */
 }
 
-#home h3 {
-  font-size: 1.5rem;
-  color: #ccc;
-}
-
-/* Sections */
-section {
-  padding: 4rem 2rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-/* Tic Tac Toe */
-#games {
-  display: none;
-}
-
-#games.active {
-  display: block;
-}
-
+/* Tic Tac Toe Game Specific Styles */
 .board {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  gap: 10px;
-  margin: 20px auto;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 80px); /* Smaller cells for better fit */
+    grid-template-rows: repeat(3, 80px);
+    gap: 8px; /* Smaller gap */
+    margin: 20px auto;
+    justify-content: center;
+    max-width: 264px; /* 3*80 + 2*8 */
+    border: 3px solid #f97316; /* Orange border for the board */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures border radius applies */
 }
 
 .cell {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-  border: 2px solid #000;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.05); /* Lighter transparent cell background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 2.8rem; /* Larger text for X/O */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff; /* White X/O */
+    transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter on hover */
 }
 
 .message {
-  text-align: center;
-  font-weight: bold;
-  margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #ffa500; /* Orange for game messages */
 }
 
-/* Memory Game */
+/* Memory Game Specific Styles */
 .memory-game {
-  display: grid;
-  grid-template-columns: repeat(4, 70px);
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 70px); /* 4 columns of 70px cards */
+    grid-template-rows: repeat(4, 70px); /* Assuming 16 cards for 8 pairs of emojis */
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2); /* Darker background for game area */
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .memory-card {
-  width: 70px;
-  height: 70px;
-  font-size: 2rem;
-  background-color: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+    width: 70px;
+    height: 70px;
+    font-size: 2.2rem; /* Size of emoji */
+    background-color: #374151; /* Dark gray for back of card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: white; /* Question mark color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Contact Section */
-.contact-container {
-  background-color: #0d1321;
-  text-align: center;
-  padding: 60px 20px;
-  color: white;
+.memory-card:hover:not(.matched) {
+    transform: scale(1.05);
+    background-color: #4b5563; /* Slightly lighter on hover */
 }
 
-.contact-container h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  font-weight: bold;
+.memory-card.matched {
+    background-color: rgba(0, 255, 0, 0.1); /* Subtle green for matched */
+    color: #4CAF50; /* Green for matched emoji */
+    cursor: default;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* Green glow */
 }
 
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 400px;
+/* Social Links in Contact/About */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem; /* More space between icons */
+    margin-top: 3rem;
 }
 
-.contact-list li {
-  display: flex;
-  align-items: center;
-  margin: 12px 0;
-  font-size: 18px;
-  justify-content: center;
-  gap: 10px;
+.social-links a {
+    color: #cbd5e1; /* Light gray for icons */
+    font-size: 2.5rem; /* Larger icons */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.contact-list img {
-  width: 24px;
-  height: 24px;
+.social-links a:hover {
+    color: #f97316; /* Orange on hover */
+    transform: translateY(-5px) scale(1.1); /* Lift and slight enlarge */
 }
 
-.contact-list a {
-  color: #fff;
-  text-decoration: underline;
+/* General button styling (for game resets) - Tailwind classes preferred where possible */
+/* These are just examples if you needed them for non-Tailwind buttons */
+/*
+.btn-primary {
+    background-color: #f97316;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.contact-footer {
-  margin-top: 40px;
-  font-size: 14px;
-  color: #aaa;
+.btn-primary:hover {
+    background-color: #ea580c;
 }
-
-.contact-footer strong {
-  color: #fff;
-}
-
-
-/* Footer */
-footer {
-  background: #111;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  flex-wrap: wrap;
-}
-
-footer .footer-left {
-  font-weight: bold;
-  color: white;
-}
-
-footer .footer-right {
-  display: flex;
-  gap: 1.5rem;
-}
-
-footer .footer-right a {
-  color: white;
-  text-decoration: none;
-}
-
-footer .footer-right a:hover {
-  color: #ffa500;
-}
+*/
