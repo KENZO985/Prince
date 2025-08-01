@@ -7,11 +7,13 @@
   <link rel="icon" href="favicon.png" type="image/png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
     body {
       opacity: 0;
       transition: opacity 0.6s ease-in-out;
+      font-family: 'Orbitron', sans-serif;
     }
     body.fade-in { opacity: 1; }
     .typing::after {
@@ -24,17 +26,17 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-b from-[#0F172A] to-black text-white font-sans">
+<body class="bg-gradient-to-br from-[#1f1f1f] via-[#1e1e1e] to-[#0f0f0f] text-white">
 
   <!-- Navbar -->
-  <header class="bg-gray-900 py-4 fixed top-0 w-full z-50">
+  <header class="bg-[#121212] py-4 fixed top-0 w-full z-50 shadow-md shadow-orange-500/20">
     <nav class="container mx-auto px-4 flex justify-between items-center">
       <h1 class="text-xl font-bold text-white">Prince Johnson</h1>
       <ul class="hidden md:flex space-x-6 text-gray-300">
-        <li><a href="index.html" class="hover:text-white transition">HOME</a></li>
-        <li><a href="about.html" class="hover:text-white transition">ABOUT</a></li>
-        <li><a href="projects.html" class="hover:text-white transition">PROJECTS</a></li>
-        <li><a href="index.html#contact" class="hover:text-white transition">CONTACT</a></li>
+        <li><a href="index.html" class="hover:text-orange-400 transition">HOME</a></li>
+        <li><a href="about.html" class="hover:text-orange-400 transition">ABOUT</a></li>
+        <li><a href="projects.html" class="hover:text-orange-400 transition">PROJECTS</a></li>
+        <li><a href="index.html#contact" class="hover:text-orange-400 transition">CONTACT</a></li>
       </ul>
       <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,7 +46,7 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden absolute right-4 top-16 bg-gray-800 text-white rounded-md shadow-lg w-40">
+    <div id="mobile-menu" class="md:hidden hidden absolute right-4 top-16 bg-[#1f1f1f] text-white rounded-md shadow-lg w-40">
       <a href="index.html" class="block px-4 py-2 hover:bg-gray-700">HOME</a>
       <a href="about.html" class="block px-4 py-2 hover:bg-gray-700">ABOUT</a>
       <a href="projects.html" class="block px-4 py-2 hover:bg-gray-700">PROJECTS</a>
@@ -54,12 +56,12 @@
 
   <!-- About Section -->
   <section class="min-h-screen flex flex-col items-center justify-center pt-24 px-4" data-aos="fade-down">
-    <div class="bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-500 max-w-lg text-center">
-      <img src="prince.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-md" />
+    <div class="bg-gradient-to-br from-[#2c2c2c] to-[#1a1a1a] border border-orange-500 shadow-lg shadow-orange-500/20 rounded-xl p-6 transition-transform transform hover:scale-105 max-w-lg text-center">
+      <img src="prince.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto border-4 border-orange-500 shadow-md shadow-orange-500/30" />
       <h1 class="text-4xl font-bold mt-4 typing text-white">About Me</h1>
       <p class="text-gray-300 mt-4">
         I'm a web game developer and tech enthusiast, currently diving deep into cybersecurity, ethical hacking, and programming. I love building creative projects and challenging myself with new tech tools and platforms. <br><br>
-        <a href="https://github.com/KENZO985" target="_blank" class="underline text-blue-400">GitHub — KENZO985</a>
+        <a href="https://github.com/KENZO985" target="_blank" class="underline text-orange-400 hover:text-white transition">GitHub — KENZO985</a>
       </p>
     </div>
   </section>
@@ -68,56 +70,8 @@
 
   <!-- Skills Section -->
   <section class="px-4 pb-20" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
+    <h2 class="text-3xl font-bold text-center mb-8 text-orange-400">Skills</h2>
     <div class="max-w-4xl mx-auto space-y-4">
-      <div class="bg-gray-700 px-6 py-4 rounded-md text-left text-gray-300">
+      <div class="bg-gradient-to-r from-[#1c1c1c] to-[#292929] border-l-4 border-orange-500 px-6 py-4 rounded-md text-left text-gray-300">
         <h3 class="font-semibold text-white">💻 Programming</h3>
         <ul class="list-disc list-inside">
-          <li>Python, C, Bash</li>
-          <li>HTML, CSS, JavaScript</li>
-        </ul>
-      </div>
-      <div class="bg-gray-700 px-6 py-4 rounded-md text-left text-gray-300">
-        <h3 class="font-semibold text-white">🛠 Tools</h3>
-        <ul class="list-disc list-inside">
-          <li>VS Code, GitHub, Canva</li>
-          <li>Tailwind CSS, React</li>
-        </ul>
-      </div>
-      <div class="bg-gray-700 px-6 py-4 rounded-md text-left text-gray-300">
-        <h3 class="font-semibold text-white">🚀 Goals</h3>
-        <ul class="list-disc list-inside">
-          <li>Become a skilled cybersecurity analyst</li>
-          <li>Build and publish interactive games</li>
-          <li>Contribute to open-source</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Back to Home -->
-  <div class="fixed bottom-6 right-6 z-50">
-    <a href="index.html" class="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg border border-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out font-semibold">
-      ⬅ Back Home
-    </a>
-  </div>
-
-  <footer class="bg-gray-800 py-4 text-center text-gray-400">
-    &copy; 2025 Prince Johnson
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: false });
-
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    document.body.classList.add('fade-in');
-  </script>
-</body>
-</html>
