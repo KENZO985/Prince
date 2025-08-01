@@ -15,9 +15,6 @@ Welcome to the source code for my personal web-based portfolio: **Welcome to My 
 ├── favicon.png
 ├── README.md
 
-yaml
-Copy
-Edit
 
 ---
 
