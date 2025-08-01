@@ -1,8 +1,17 @@
-body {
-  font-family: Arial, sans-serif;
+/* style.css */
+
+/* Base Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
+
+body {
   background: #f0f0f0;
+  color: #333;
 }
 
 /* Navbar */
