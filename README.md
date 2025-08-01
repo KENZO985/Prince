@@ -1,6 +1,6 @@
 # 🖥️ Personal Portfolio Website – Prince Johnson
 
-Welcome to the source code for my personal web-based portfolio: **Welcome to My World**
+Welcome to the source code for my personal website: **Hey, I'm Prince Johnson – Web Game Developer & Tech Enthusiast**
 
 🔗 **Live Site:** [https://kenzo985.github.io/Prince](https://kenzo985.github.io/Prince)
 
@@ -8,45 +8,45 @@ Welcome to the source code for my personal web-based portfolio: **Welcome to My 
 
 ## 📁 Project Structure
 
-root/
+📦 Prince/
 ├── index.html
 ├── about.html
 ├── projects.html
+├── favicon.png
 ├── style.css
 ├── script.js
-├── favicon.png
-├── README.md
+└── README.md
 
 
 ---
 
 ## 🌐 Technologies Used
 
-- **HTML5** – Page structure  
-- **CSS3** – Layout, styling, and responsiveness  
-- **JavaScript** – Game logic and UI interactivity  
-- **Responsive Design** – Optimized for both desktop and mobile devices  
+- **HTML5** – Structure of the website  
+- **CSS3** – Styling and layout  
+- **JavaScript** – Interactivity and animations  
+- **Responsive Design** – Mobile-friendly layouts  
 
 ---
 
 ## 🎯 Key Features
 
-- 🎮 **Games Section:** Includes playable **Tic Tac Toe** and **Memory Match**
-- 🎨 **Modern Design:** Clean, minimal layout inspired by developer portfolios
-- 💡 **Smooth Animations:** Sections appear with fade-in effects on load
-- 📱 **Mobile Responsive:** Seamless experience across devices
-- 📇 **Contact Section:** Quick links to email, LinkedIn, Instagram, and GitHub
-- 🔗 **Sticky Navbar:** Navigation stays accessible as you scroll
+- 🎮 Web games (Tic Tac Toe and Memory Match)  
+- 💡 Smooth scroll-based transitions  
+- 📱 Mobile responsive design  
+- 🎨 Minimal and clean UI inspired by modern portfolios  
+- 🧭 Sticky navbar with navigation links  
+- 🔗 Contact section with social links and hover animations  
 
 ---
 
 ## ✨ Future Additions
 
-- 🎲 Add new web games (e.g., Snake, Brick Breaker)
-- 🧠 Integrate JavaScript project highlights
-- 📝 Add a blog or personal journal section
-- 🎨 Implement dark/light mode toggle
+- 🕹️ Add more web-based games  
+- 📂 Project showcase integration  
+- 📝 Blog or notes section for technical writing  
+- 🌗 Dark/light theme toggle  
 
 ---
 
-> Developed with love by **Prince Johnson**
+> Made with ❤️ by **Prince Johnson**
