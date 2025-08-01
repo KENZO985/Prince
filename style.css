@@ -14,68 +14,49 @@ body {
   color: #333;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: #1a1a1a;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.site-title {
-  color: #ffa500;
-  font-size: 1.5em;
-  font-weight: bold;
-}
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-.nav-menu a {
-  text-decoration: none;
-  color: #eee;
-  font-weight: 500;
-}
-.nav-menu a:hover {
-  color: #ffa500;
-}
-
 header {
   background-color: #222;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+/* ✅ Navbar */
 nav {
-  max-width: 1000px;
-  margin: auto;
+  background-color: #111;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.logo {
+
+/* Site title on the left */
+.site-title {
   color: white;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
 }
+
+/* Navigation links on the right */
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  list-style: none;
+  gap: 1.5rem;
 }
-.nav-links a {
-  color: white;
+
+.nav-links li a {
   text-decoration: none;
-  font-weight: bold;
+  color: white;
+  font-weight: normal;
+  transition: color 0.3s;
 }
-.nav-links a:hover {
-  text-decoration: underline;
+
+.nav-links li a:hover {
+  color: orange;
 }
+
 
 section {
   padding: 2em;
