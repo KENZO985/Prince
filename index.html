@@ -146,37 +146,39 @@
 
 
     <script>
-        const sections = ['home', 'about', 'projects', 'contact']; // Ensure these IDs match your sections
+    const sections = ['home', 'about', 'projects', 'contact'];
 
-        function showSection(id) {
-            sections.forEach(sec => {
-                const sectionElement = document.getElementById(sec);
-                if (sectionElement) { // Safety check: ensure element exists
-                    sectionElement.classList.add('hidden-section');
-                }
-            });
-            const targetSection = document.getElementById(id);
-            if (targetSection) { // Safety check: ensure target element exists
-                targetSection.classList.remove('hidden-section');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                history.pushState(null, '', `#${id}`); // Update URL hash for direct links
+    function showSection(id) {
+        // Hide ALL sections first
+        sections.forEach(secId => {
+            const sectionElement = document.getElementById(secId);
+            if (sectionElement) {
+                sectionElement.classList.add('hidden-section');
             }
+        });
+
+        // Then, show ONLY the target section
+        const targetSection = document.getElementById(id);
+        if (targetSection) {
+            targetSection.classList.remove('hidden-section');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            history.pushState(null, '', `#${id}`);
+        }
+    }
+
+    // On page load, check for URL hash to display the correct section
+    document.addEventListener('DOMContentLoaded', () => {
+        const initialHash = window.location.hash.substring(1);
+        if (initialHash && sections.includes(initialHash)) {
+            showSection(initialHash);
+        } else {
+            showSection('home'); // Default to home if no valid hash
         }
 
-        // On page load, check for URL hash to display the correct section
-        document.addEventListener('DOMContentLoaded', () => {
-            const initialHash = window.location.hash.substring(1); // Get hash without '#'
-            if (initialHash && sections.includes(initialHash)) {
-                showSection(initialHash);
-            } else {
-                showSection('home'); // Default to home if no valid hash
-            }
-
-            // Update footer copyright year
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-    </script>
-
+        // Update footer copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    });
+</script>
     <script src="script.js"></script>
 
 </body>
