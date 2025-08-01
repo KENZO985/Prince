@@ -14,8 +14,9 @@
 
     <style>
         /* This rule must be present and correctly defined for sections to hide */
+        /* !important added here to ensure it overrides any conflicting display properties */
         .hidden-section {
-            display: none;
+            display: none !important;
         }
 
         /* Typing effect for home section H2 */
