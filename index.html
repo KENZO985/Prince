@@ -120,25 +120,32 @@
         </div>
     </section>
 
-    <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-16">
-        <h2 class="text-4xl font-bold mb-8 text-orange-400">Get in Touch</h2>
-        <p class="text-gray-300 text-lg mb-12 max-w-2xl mx-auto">
-            Have a question, a project idea, or just want to say hi? Feel free to reach out! I'm always open to new opportunities and collaborations.
-        </p>
+    <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-20 md:py-32 flex flex-col items-center justify-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-10 md:mb-16 text-white uppercase tracking-wider">CONTACTS</h2>
 
-        <form class="max-w-xl mx-auto bg-gray-800 p-8 rounded-lg shadow-xl space-y-6 glass-card">
-            <input type="text" placeholder="Your Name" class="w-full p-4 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50 transition-all duration-300" />
-            <input type="email" placeholder="Email" class="w-full p-4 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50 transition-all duration-300" />
-            <textarea rows="6" placeholder="Your Message" class="w-full p-4 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50 transition-all duration-300"></textarea>
-            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 p-4 rounded-md font-bold text-xl transition-colors duration-300 shadow-lg">Send Message</button>
-        </form>
+    <div class="flex flex-col items-center space-y-8 md:space-y-10 text-white text-lg md:text-xl">
+        <a href="mailto:princejohnson@example.com" class="contact-item hover:text-orange-400 transition-colors duration-300">
+            <i class="fas fa-envelope mr-3 text-2xl md:text-3xl"></i>
+            princejohnson@example.com
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+            <i class="fab fa-linkedin mr-3 text-2xl md:text-3xl"></i>
+            LinkedIn
+        </a>
+        <a href="https://instagram.com/yourinstagram" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+            <i class="fab fa-instagram mr-3 text-2xl md:text-3xl"></i>
+            @ _princejohnson_
+        </a>
+        <a href="https://github.com/KENZO985" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+            <i class="fab fa-github mr-3 text-2xl md:text-3xl"></i>
+            GitHub
+        </a>
+        </div>
+</section>
 
-        <div class="social-links mt-12">
-            <a href="https://github.com/KENZO985" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-    </section>
+<footer class="bg-blue-950 py-6 text-center text-gray-400 text-sm">
+    &copy; <span id="current-year"></span> Prince Johnson.
+</footer>
 
     <footer class="bg-black py-6 text-center text-gray-400 text-sm">
         &copy; <span id="current-year"></span> Prince Johnson. All rights reserved.
