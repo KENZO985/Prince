@@ -7,43 +7,38 @@
   <title>About - Prince Johnson</title>
   <link rel="icon" href="favicon.png" type="image/png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
-    body { opacity: 0; transition: opacity 0.6s ease-in-out; }
-    body.fade-in { opacity: 1; }
+    .typing::after {
+      content: '|';
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
   </style>
 </head>
-<body class="bg-gradient-to-b from-[#0F172A] to-black text-white font-sans fade-in">
+<body class="bg-gradient-to-b from-gray-900 to-black text-white font-sans">
+  <header class="bg-black py-4 fixed w-full z-50">
+    <nav class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Prince Johnson</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-orange-400">HOME</a></li>
+        <li><a href="about.html" class="hover:text-orange-400">ABOUT</a></li>
+        <li><a href="projects.html" class="hover:text-orange-400">PROJECTS</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header class="bg-gray-900 py-4 fixed top-0 w-full z-50">
-  <nav class="container mx-auto px-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-white">Prince Johnson</h1>
-    <ul class="hidden md:flex space-x-6 text-gray-300">
-      <li><a href="index.html#home" class="hover:text-white">HOME</a></li>
-      <li><a href="about.html" class="hover:text-white">ABOUT</a></li>
-      <li><a href="projects.html" class="hover:text-white">GAMES</a></li>
-      <li><a href="index.html#contact" class="hover:text-white">CONTACT</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="min-h-screen flex flex-col items-center justify-center pt-24 px-4" data-aos="fade-down">
-  <div class="bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-500 max-w-lg text-center">
-    <img src="Personal Photo.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-md" />
-    <h1 class="text-4xl font-bold mt-4 text-white">About Me</h1>
-    <p class="text-gray-300 mt-4">
-      I'm a web game developer and tech enthusiast, diving into cybersecurity, ethical hacking, and programming.<br><br>
-      <a href="https://github.com/KENZO985" target="_blank" class="underline text-blue-400">GitHub — KENZO985</a>
+  <section class="pt-32 px-6 text-center">
+    <img src="Personal Photo.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow" />
+    <h2 class="text-3xl font-bold mb-4">About Me</h2>
+    <p class="text-gray-300 max-w-xl mx-auto">
+      I'm a passionate web developer focused on interactive games, ethical hacking, and futuristic designs.
+      <br><br>
+      <a href="https://github.com/KENZO985" target="_blank" class="text-orange-400 underline">GitHub — KENZO985</a>
     </p>
-  </div>
-</section>
-
-<footer class="bg-gray-800 py-4 text-center text-gray-400">
-  &copy; 2025 Prince Johnson
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 800 }); document.body.classList.add('fade-in');</script>
+  </section>
 </body>
 </html>
