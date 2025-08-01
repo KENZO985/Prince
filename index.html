@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prince Johnson</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prince Johnson Portfolio</title>
+  <link rel="icon" href="favicon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     html { scroll-behavior: smooth; }
     body {
@@ -14,83 +13,103 @@
       transition: opacity 0.6s ease-in-out;
     }
     body.fade-in { opacity: 1; }
-    .typing::after {
-      content: '|';
-      animation: blink 0.8s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
   </style>
 </head>
-<body class="bg-gradient-to-b from-[#0F172A] to-black text-white font-sans fade-in">
+<body class="bg-gradient-to-b from-gray-900 to-black text-white fade-in">
 
-<!-- Navbar -->
-<header class="bg-gray-900 py-4 fixed top-0 w-full z-50">
-  <nav class="container mx-auto px-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold text-white">Prince Johnson</h1>
-    <ul class="hidden md:flex space-x-6 text-gray-300">
-      <li><a href="index.html" class="hover:text-white transition">HOME</a></li>
-      <li><a href="about.html" class="hover:text-white transition">ABOUT</a></li>
-      <li><a href="projects.html" class="hover:text-white transition">GAMES</a></li>
-      <li><a href="#contact" class="hover:text-white transition">CONTACT</a></li>
-    </ul>
-    <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </nav>
+  <!-- Navbar -->
+  <header class="bg-black py-4 fixed w-full top-0 z-50">
+    <nav class="container mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-white">Prince Johnson</h1>
+      <ul class="hidden md:flex space-x-6 text-gray-300">
+        <li><a href="#home" class="nav-link hover:text-white">HOME</a></li>
+        <li><a href="#about" class="nav-link hover:text-white">ABOUT</a></li>
+        <li><a href="#games" class="nav-link hover:text-white">GAMES</a></li>
+        <li><a href="#contact" class="nav-link hover:text-white">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu"
-       class="md:hidden hidden absolute right-4 top-16 bg-gray-800 text-white rounded-md shadow-lg w-40">
-    <a href="index.html" class="block px-4 py-2 hover:bg-gray-700">HOME</a>
-    <a href="about.html" class="block px-4 py-2 hover:bg-gray-700">ABOUT</a>
-    <a href="projects.html" class="block px-4 py-2 hover:bg-gray-700">GAMES</a>
-    <a href="#contact" class="block px-4 py-2 hover:bg-gray-700">CONTACT</a>
-  </div>
-</header>
+  <!-- Sections -->
+  <main class="pt-24 space-y-16">
 
-<!-- Hero Section -->
-<section class="min-h-screen flex items-center justify-center text-center px-4 pt-24 bg-gradient-to-b from-orange-900 via-gray-900 to-black">
-  <div data-aos="fade-up">
-    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Hey, I’m Prince Johnson</h1>
-    <p class="text-lg md:text-2xl text-gray-300">Web Game Developer & Tech Enthusiast</p>
-  </div>
-</section>
+    <!-- Hero/Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center text-center px-4">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Hey, I’m Prince Johnson</h1>
+        <p class="text-lg text-gray-300 mb-6">
+          Web Game Developer & Tech Enthusiast<br>
+          Currently exploring Cybersecurity, Ethical Hacking, and Creative Coding.
+        </p>
+        <a href="#contact" class="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition">
+          Let’s Connect
+        </a>
+      </div>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-gradient-to-b from-black via-gray-900 to-orange-900 text-white">
-  <div class="max-w-3xl mx-auto px-4 text-center" data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-8">CONTACTS</h2>
-    <div class="space-y-6 text-gray-300">
-      <p><strong>Email:</strong> prince308j@gmail.com</p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com" class="text-blue-400 underline">LinkedIn</a></p>
-      <p><strong>Instagram:</strong> @prince_308_j</p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/KENZO985" class="text-blue-400 underline">GitHub</a></p>
-    </div>
-  </div>
-</section>
+    <!-- About Section -->
+    <section id="about" class="hidden px-4" data-section>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <img src="Personal Photo.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-md mb-4" />
+        <p class="text-gray-300">
+          I'm a passionate developer building web-based games and exploring cybersecurity, ethical hacking, and open-source.
+        </p>
+      </div>
+    </section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 py-4 text-center text-white font-bold">
-  &copy; 2025 Prince Johnson
-</footer>
+    <!-- Games Section -->
+    <section id="games" class="hidden px-4" data-section>
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Games</h2>
+        <p class="text-gray-300">Explore the fun web games I’ve built!</p>
+        <ul class="mt-6 space-y-2 text-orange-400">
+          <li><a href="tic-tac-toe.html" class="underline">Tic Tac Toe</a></li>
+          <li><a href="memory-match.html" class="underline">Memory Match</a></li>
+          <!-- Add more games as needed -->
+        </ul>
+      </div>
+    </section>
 
-<!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 800, once: false });
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-  document.body.classList.add('fade-in');
-</script>
+    <!-- Contact Section -->
+    <section id="contact" class="hidden px-4 bg-gradient-to-b from-gray-900 to-gray-800 py-12" data-section>
+      <div class="max-w-2xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-6">CONTACTS</h2>
+        <div class="space-y-4 text-gray-300">
+          <p><strong>Email:</strong> prince308j@gmail.com</p>
+          <p><strong>LinkedIn:</strong> <a href="#" class="underline">LinkedIn</a></p>
+          <p><strong>Instagram:</strong> @prince_308_j</p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/KENZO985" class="underline">GitHub</a></p>
+        </div>
+        <p class="mt-8 text-sm text-gray-400">© 2025 <strong class="text-white">Prince Johnson</strong></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script -->
+  <script>
+    document.body.classList.add('fade-in');
+
+    const sections = ['home', 'about', 'games', 'contact'];
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const id = e.target.getAttribute('href').substring(1);
+        sections.forEach(sec => {
+          const el = document.getElementById(sec);
+          if (el) el.style.display = sec === id ? 'block' : 'none';
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Show home by default
+    sections.forEach(sec => {
+      document.getElementById(sec).style.display = sec === 'home' ? 'block' : 'none';
+    });
+  </script>
+
 </body>
 </html>
