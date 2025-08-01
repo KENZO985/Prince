@@ -6,21 +6,15 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background: #f0f0f0;
+  background-color: #f9f9f9;
   color: #333;
 }
 
-header {
-  background-color: #222;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-/* ✅ Navbar */
+/* Navbar */
 nav {
   background-color: #111;
   padding: 1rem 2rem;
@@ -32,57 +26,92 @@ nav {
   z-index: 1000;
 }
 
-/* Site title on the left */
-.site-title {
+.nav-left {
   color: white;
-  font-size: 1.5rem;
   font-weight: bold;
+  font-size: 1rem;
 }
 
-/* Navigation links on the right */
-.nav-links {
+.nav-right {
   display: flex;
   list-style: none;
   gap: 1.5rem;
 }
 
-.nav-links li a {
+.nav-right li a {
   text-decoration: none;
   color: white;
-  font-weight: normal;
+  font-weight: 500;
   transition: color 0.3s;
+  text-transform: none;
 }
 
-.nav-links li a:hover {
+.nav-right li a:hover {
   color: orange;
 }
 
+/* Hero Section */
+#home {
+  padding: 100px 20px;
+  text-align: center;
+  background: #222;
+  color: #fff;
+}
 
+#home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffa500;
+}
+
+#home h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1.2rem;
+}
+
+#home h3 {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+/* Sections */
 section {
-  padding: 2em;
-  background: white;
-  margin: 1em;
-  border-radius: 10px;
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* Tic Tac Toe */
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  gap: 5px;
+  gap: 10px;
+  margin: 20px auto;
   justify-content: center;
 }
+
 .cell {
   width: 100px;
   height: 100px;
-  background: #ccc;
-  font-size: 2em;
-  text-align: center;
-  line-height: 100px;
+  background-color: #fff;
+  border: 2px solid #000;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
-/* Message */
 .message {
   text-align: center;
   font-weight: bold;
@@ -92,77 +121,76 @@ section {
 /* Memory Game */
 .memory-game {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  gap: 10px;
+  grid-template-columns: repeat(4, 70px);
+  gap: 15px;
   justify-content: center;
+  margin-top: 20px;
 }
-.card {
-  width: 100px;
-  height: 100px;
-  background: #444;
-  color: white;
+
+.memory-card {
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+  background-color: #ddd;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
   cursor: pointer;
-  border-radius: 8px;
-}
-.matched {
-  background: #2ecc71 !important;
 }
 
 /* Contact */
-form {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-input, textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-image {
-  height: 50px;
-  width: auto;
-}
-
-.logo-text {
+#contact {
+  text-align: center;
+  background: #111;
   color: white;
-  font-size: 1.2em;
-  font-weight: bold;
+  padding: 2rem;
 }
 
-button {
-  padding: 10px;
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#contact p a {
-  color: #0066cc;
+#contact a {
+  color: #ffa500;
   text-decoration: none;
+  display: block;
+  margin: 0.5rem 0;
 }
-#contact p a:hover {
+
+#contact a:hover {
   text-decoration: underline;
 }
 
-
 /* Footer */
 footer {
-  background: #222;
+  background: #111;
   color: white;
-  text-align: center;
-  padding: 1em;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+footer .left {
+  font-weight: bold;
+  color: white;
+}
+
+footer .right {
+  text-transform: none;
+}
+
+/* Hero Text */
+.hero-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffa500;
+  margin-bottom: 1rem;
+}
+
+.hero-subheading {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-top: 0.5rem;
+}
+
+.hidden {
+  display: none;
 }
