@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games - Prince Johnson</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { opacity: 0; transition: opacity 0.6s ease-in-out; }
+    body.fade-in { opacity: 1; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-[#0F172A] to-black text-white font-sans fade-in">
+
+<header class="bg-gray-900 py-4 fixed top-0 w-full z-50">
+  <nav class="container mx-auto px-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-white">Prince Johnson</h1>
+    <ul class="hidden md:flex space-x-6 text-gray-300">
+      <li><a href="index.html#home" class="hover:text-white">HOME</a></li>
+      <li><a href="about.html" class="hover:text-white">ABOUT</a></li>
+      <li><a href="projects.html" class="hover:text-white">GAMES</a></li>
+      <li><a href="index.html#contact" class="hover:text-white">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="min-h-screen pt-24 px-6 text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-bold mb-10">My Games</h2>
+  <p class="text-gray-300 mb-6">Check out the games I've created using HTML, CSS & JavaScript.</p>
+  <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+    <div class="bg-gray-700 rounded-lg p-6">
+      <h3 class="text-xl font-semibold mb-2">🎮 Tic Tac Toe</h3>
+      <p class="text-gray-300 mb-2">A simple two-player game built with JavaScript.</p>
+      <a href="#" class="text-orange-400 hover:underline">Play Now</a>
+    </div>
+    <div class="bg-gray-700 rounded-lg p-6">
+      <h3 class="text-xl font-semibold mb-2">🧠 Memory Match</h3>
+      <p class="text-gray-300 mb-2">Flip cards and test your memory!</p>
+      <a href="#" class="text-orange-400 hover:underline">Play Now</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-800 py-4 text-center text-gray-400">
+  &copy; 2025 Prince Johnson
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800 }); document.body.classList.add('fade-in');</script>
+</body>
+</html>
