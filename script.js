@@ -47,3 +47,22 @@ cards.forEach(val => {
   });
   memoryGame.appendChild(card);
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll("nav .nav-right a");
+  const gameSection = document.getElementById("games");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      if (link.textContent.trim().toLowerCase() === "games") {
+        e.preventDefault();
+        gameSection.classList.add("active");
+        gameSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        gameSection.classList.remove("active");
+      }
+    });
+  });
+});
+
