@@ -187,7 +187,26 @@
     color: #f97316; /* Orange on hover */
     transform: translateY(-5px) scale(1.1); /* Lift and slight enlarge */
 }
+.contact-item {
+    display: flex; /* Makes icon and text align horizontally */
+    align-items: center; /* Vertically centers icon and text */
+    text-decoration: none; /* Removes underline by default */
+    font-weight: 500; /* Medium font weight */
+    letter-spacing: 0.025em; /* Subtle letter spacing */
+}
 
+.contact-item i {
+    color: #cbd5e1; /* Light gray for icons */
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.contact-item:hover i {
+    color: #f97316; /* Orange hover for icon */
+}
+
+.contact-item:hover {
+    color: #f97316; /* Orange hover for text */
+}
 /* General button styling (for game resets) - Tailwind classes preferred where possible */
 /* These are just examples if you needed them for non-Tailwind buttons */
 /*
