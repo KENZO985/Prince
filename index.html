@@ -1,89 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prince Johnson</title>
-  <link rel="icon" href="favicon.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    .hidden-section { display: none; }
-    .typing::after {
-      content: '|';
-      animation: blink 0.8s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prince Johnson</title>
+    <link rel="icon" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" /> <style>
+        /* Keep any very specific, small CSS overrides or animations here if you prefer,
+           or move them entirely to style.css */
+        .hidden-section { display: none; }
+        .typing::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-b from-gray-900 to-black text-white font-sans min-h-screen">
 
-  <!-- Navbar -->
-  <header class="bg-black py-4 fixed w-full z-50">
-    <nav class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Prince Johnson</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#" onclick="showSection('home')" class="hover:text-orange-400">HOME</a></li>
-        <li><a href="#" onclick="showSection('about')" class="hover:text-orange-400">ABOUT</a></li>
-        <li><a href="#" onclick="showSection('games')" class="hover:text-orange-400">GAMES</a></li>
-        <li><a href="#" onclick="showSection('contact')" class="hover:text-orange-400">CONTACT</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="bg-black py-4 fixed w-full z-50">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold">Prince Johnson</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#" onclick="showSection('home')" class="hover:text-orange-400">HOME</a></li>
+                <li><a href="#" onclick="showSection('about')" class="hover:text-orange-400">ABOUT</a></li>
+                <li><a href="#" onclick="showSection('projects')" class="hover:text-orange-400">PROJECTS</a></li>
+                <li><a href="#" onclick="showSection('contact')" class="hover:text-orange-400">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Sections -->
+    <section id="home" class="pt-32 px-6 text-center">
+        <h2 class="text-4xl font-bold typing">I'm Prince Johnson</h2>
+        <p class="mt-4 text-gray-300">Game Developer | Cybersecurity Learner | Creative Coder</p>
+    </section>
 
-  <!-- Home -->
-  <section id="home" class="pt-32 px-6 text-center">
-    <h2 class="text-4xl font-bold typing">I'm Prince Johnson</h2>
-    <p class="mt-4 text-gray-300">Game Developer | Cybersecurity Learner | Creative Coder</p>
-  </section>
+    <section id="about" class="hidden-section pt-32 px-6 text-center">
+        <img src="personal-photo.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow" />
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="text-gray-300 max-w-xl mx-auto">
+            I'm a passionate web developer focused on interactive games, ethical hacking, and futuristic designs.
+            <br><br>
+            <a href="https://github.com/KENZO985" target="_blank" class="text-orange-400 underline">GitHub — KENZO985</a>
+        </p>
+        </section>
 
-  <!-- About -->
-  <section id="about" class="hidden-section pt-32 px-6 text-center">
-    <img src="Personal Photo.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow" />
-    <h2 class="text-3xl font-bold mb-4">About Me</h2>
-    <p class="text-gray-300 max-w-xl mx-auto">
-      I'm a passionate web developer focused on interactive games, ethical hacking, and futuristic designs.
-      <br><br>
-      <a href="https://github.com/KENZO985" target="_blank" class="text-orange-400 underline">GitHub — KENZO985</a>
-    </p>
-  </section>
+    <section id="projects" class="hidden-section pt-32 px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Projects</h2>
+        <p class="text-gray-300">Tic Tac Toe, Memory Match, and more are on the way!</p>
 
-  <!-- Games -->
-  <section id="games" class="hidden-section pt-32 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">My Games</h2>
-    <p class="text-gray-300">Tic Tac Toe, Memory Match, and more coming soon!</p>
-  </section>
+        <div class="board" id="ticTacToeBoard">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <p id="ticMessage" class="message"></p>
+        <h3 class="text-2xl font-bold mt-8 mb-4">Memory Match</h3>
+        <div class="memory-game" id="memoryGame">
+            </div>
+        </section>
 
-  <!-- Contact -->
-  <section id="contact" class="hidden-section pt-32 px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-    <form class="max-w-md mx-auto bg-gray-800 p-6 rounded-md shadow-lg space-y-4">
-      <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" />
-      <input type="email" placeholder="Email" class="w-full p-3 rounded bg-gray-700 text-white" />
-      <textarea rows="4" placeholder="Message" class="w-full p-3 rounded bg-gray-700 text-white"></textarea>
-      <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 p-3 rounded font-bold transition">Send</button>
-    </form>
-  </section>
+    <section id="contact" class="hidden-section pt-32 px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+        <form class="max-w-md mx-auto bg-gray-800 p-6 rounded-md shadow-lg space-y-4">
+            <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" />
+            <input type="email" placeholder="Email" class="w-full p-3 rounded bg-gray-700 text-white" />
+            <textarea rows="4" placeholder="Message" class="w-full p-3 rounded bg-gray-700 text-white"></textarea>
+            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 p-3 rounded font-bold transition">Send</button>
+        </form>
+        </section>
 
-  <!-- Script to show/hide sections -->
-  <script>
-    const sections = ['home', 'about', 'games', 'contact'];
-    function showSection(id) {
-      sections.forEach(sec => {
-        document.getElementById(sec).classList.add('hidden-section');
-      });
-      document.getElementById(id).classList.remove('hidden-section');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    <script>
+        const sections = ['home', 'about', 'projects', 'contact']; // Ensure 'projects' matches your new ID
+        function showSection(id) {
+            sections.forEach(sec => {
+                document.getElementById(sec).classList.add('hidden-section');
+            });
+            document.getElementById(id).classList.remove('hidden-section');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            history.pushState(null, '', `#${id}`); // Update URL hash
+        }
 
-    // Show home section on initial load
-    showSection('home');
-  </script>
-
+        // On page load, check if there's a hash and show that section
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && sections.includes(initialHash)) {
+                showSection(initialHash);
+            } else {
+                showSection('home');
+            }
+        });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
