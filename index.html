@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prince Johnson</title>
+    <title>Prince Johnson - Web Game Developer & Tech Enthusiast</title>
     <link rel="icon" href="favicon.png" />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css" /> <style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
         /* Keep any very specific, small CSS overrides or animations here if you prefer,
            or move them entirely to style.css */
-        .hidden-section { display: none; }
+        .hidden-section {
+            display: none;
+        }
+
+        /* Typing effect for home section H2 */
         .typing::after {
             content: '|';
             animation: blink 0.8s infinite;
@@ -23,85 +32,152 @@
 </head>
 <body class="bg-gradient-to-b from-gray-900 to-black text-white font-sans min-h-screen">
 
-    <header class="bg-black py-4 fixed w-full z-50">
+    <header class="bg-black py-4 fixed w-full z-50 shadow-lg">
         <nav class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold">Prince Johnson</h1>
+            <h1 class="text-xl font-bold text-orange-400">Prince Johnson</h1>
             <ul class="flex space-x-6">
-                <li><a href="#" onclick="showSection('home')" class="hover:text-orange-400">HOME</a></li>
-                <li><a href="#" onclick="showSection('about')" class="hover:text-orange-400">ABOUT</a></li>
-                <li><a href="#" onclick="showSection('projects')" class="hover:text-orange-400">PROJECTS</a></li>
-                <li><a href="#" onclick="showSection('contact')" class="hover:text-orange-400">CONTACT</a></li>
+                <li><a href="#" onclick="showSection('home')" class="hover:text-orange-400 transition-colors duration-300">HOME</a></li>
+                <li><a href="#" onclick="showSection('about')" class="hover:text-orange-400 transition-colors duration-300">ABOUT</a></li>
+                <li><a href="#" onclick="showSection('projects')" class="hover:text-orange-400 transition-colors duration-300">PROJECTS</a></li>
+                <li><a href="#" onclick="showSection('contact')" class="hover:text-orange-400 transition-colors duration-300">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="pt-32 px-6 text-center">
-        <h2 class="text-4xl font-bold typing">I'm Prince Johnson</h2>
-        <p class="mt-4 text-gray-300">Game Developer | Cybersecurity Learner | Creative Coder</p>
+    <section id="home" class="pt-32 px-6 text-center min-h-screen flex flex-col justify-center items-center">
+        <h2 class="text-5xl md:text-6xl font-extrabold typing text-white mb-4">I'm Prince Johnson</h2>
+        <p class="mt-4 text-gray-300 text-lg md:text-xl">Game Developer | Cybersecurity Learner | Creative Coder</p>
     </section>
 
-    <section id="about" class="hidden-section pt-32 px-6 text-center">
-        <img src="personal-photo.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow" />
-        <h2 class="text-3xl font-bold mb-4">About Me</h2>
-        <p class="text-gray-300 max-w-xl mx-auto">
-            I'm a passionate web developer focused on interactive games, ethical hacking, and futuristic designs.
-            <br><br>
-            <a href="https://github.com/KENZO985" target="_blank" class="text-orange-400 underline">GitHub — KENZO985</a>
-        </p>
-        </section>
-
-    <section id="projects" class="hidden-section pt-32 px-6 text-center">
-        <h2 class="text-3xl font-bold mb-4">Projects</h2>
-        <p class="text-gray-300">Tic Tac Toe, Memory Match, and more are on the way!</p>
-
-        <div class="board" id="ticTacToeBoard">
-            <div class="cell" data-cell></div>
-            <div class="cell" data-cell></div>
-            <div class="cell" data-cell></div>
-            <div class="cell" data-cell></div>
-            <div class="cell" data-cell></div>
-            <div class="cell" data-cell></div>
-            <div class="cell" data-cell></div>
-            <div class="cell" data-cell></div>
-            <div class="cell" data-cell></div>
-        </div>
-        <p id="ticMessage" class="message"></p>
-        <h3 class="text-2xl font-bold mt-8 mb-4">Memory Match</h3>
-        <div class="memory-game" id="memoryGame">
+    <section id="about" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-16">
+        <h2 class="text-4xl font-bold mb-8 text-orange-400">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center max-w-4xl mx-auto gap-8">
+            <img src="personal-photo.jpg" alt="Prince Johnson" class="w-48 h-48 rounded-full object-cover mx-auto mb-4 border-4 border-orange-400 shadow-xl" />
+            <div class="md:text-left md:w-1/2">
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Hello! I'm Prince Johnson, a passionate web developer with a keen interest in crafting interactive games, exploring the depths of cybersecurity, and designing futuristic user interfaces. My journey in tech is driven by curiosity and a desire to build engaging digital experiences.
+                    <br><br>
+                    I thrive on challenges and constantly seek to expand my knowledge, whether it's optimizing game performance or delving into ethical hacking methodologies. My goal is to merge creativity with robust technical solutions to bring innovative ideas to life.
+                </p>
+                <div class="mt-6">
+                    <a href="https://github.com/KENZO985" target="_blank" class="text-orange-400 underline hover:no-underline text-xl font-semibold transition-colors duration-300">
+                        <i class="fa-brands fa-github mr-2"></i>GitHub — KENZO985
+                    </a>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    <section id="contact" class="hidden-section pt-32 px-6 text-center">
-        <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-        <form class="max-w-md mx-auto bg-gray-800 p-6 rounded-md shadow-lg space-y-4">
-            <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" />
-            <input type="email" placeholder="Email" class="w-full p-3 rounded bg-gray-700 text-white" />
-            <textarea rows="4" placeholder="Message" class="w-full p-3 rounded bg-gray-700 text-white"></textarea>
-            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 p-3 rounded font-bold transition">Send</button>
+    <section id="projects" class="hidden-section pt-24 px-6 text-center bg-black py-16">
+        <h2 class="text-4xl font-bold mb-8 text-orange-400">My Projects</h2>
+        <p class="text-gray-300 text-lg mb-12">Here are some interactive web games I've built, with more projects on the way!</p>
+
+        <div class="projects-grid">
+            <div class="project-card glass-card">
+                <h3 class="text-2xl font-bold mb-4">Tic Tac Toe</h3>
+                <div class="board" id="ticTacToeBoard">
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                </div>
+                <p id="ticMessage" class="message text-lg mt-4 font-semibold"></p>
+                <button id="ticTacToeReset" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 mt-4">Reset Game</button>
+            </div>
+
+            <div class="project-card glass-card">
+                <h3 class="text-2xl font-bold mb-4">Memory Match</h3>
+                <div class="memory-game" id="memoryGame">
+                    </div>
+                <p id="memoryGameMessage" class="message text-lg mt-4 font-semibold"></p>
+                <button id="memoryGameReset" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 mt-4">Reset Game</button>
+            </div>
+
+            <div class="project-card glass-card">
+                <img src="https://via.placeholder.com/300x200?text=Your+Project+Image" alt="Future Project" class="w-full h-auto rounded-md mb-4 object-cover">
+                <h3 class="text-2xl font-bold mb-2">Coming Soon!</h3>
+                <p class="text-gray-300">Exciting new projects are under development. Stay tuned for more interactive experiences and innovative solutions!</p>
+                <div class="project-links mt-4">
+                    <a href="#" class="bg-gray-700 hover:bg-orange-500 text-white px-4 py-2 rounded-md transition-colors duration-300 cursor-not-allowed opacity-70">View Demo</a>
+                    <a href="#" class="bg-gray-700 hover:bg-orange-500 text-white px-4 py-2 rounded-md transition-colors duration-300 cursor-not-allowed opacity-70">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card glass-card">
+                <img src="https://via.placeholder.com/300x200?text=Another+Project" alt="Another Project" class="w-full h-auto rounded-md mb-4 object-cover">
+                <h3 class="text-2xl font-bold mb-2">Web Design Showcase</h3>
+                <p class="text-gray-300">A collection of modern and responsive web designs. Exploring UI/UX principles and modern CSS techniques.</p>
+                <div class="project-links mt-4">
+                    <a href="#" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md transition-colors duration-300">View Demo</a>
+                    <a href="https://github.com/KENZO985" target="_blank" class="bg-gray-700 hover:bg-orange-500 text-white px-4 py-2 rounded-md transition-colors duration-300">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-16">
+        <h2 class="text-4xl font-bold mb-8 text-orange-400">Get in Touch</h2>
+        <p class="text-gray-300 text-lg mb-12 max-w-2xl mx-auto">
+            Have a question, a project idea, or just want to say hi? Feel free to reach out! I'm always open to new opportunities and collaborations.
+        </p>
+
+        <form class="max-w-xl mx-auto bg-gray-800 p-8 rounded-lg shadow-xl space-y-6 glass-card">
+            <input type="text" placeholder="Your Name" class="w-full p-4 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50 transition-all duration-300" />
+            <input type="email" placeholder="Email" class="w-full p-4 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50 transition-all duration-300" />
+            <textarea rows="6" placeholder="Your Message" class="w-full p-4 rounded-md bg-gray-700 text-white border border-gray-600 focus:border-orange-500 focus:ring focus:ring-orange-500 focus:ring-opacity-50 transition-all duration-300"></textarea>
+            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 p-4 rounded-md font-bold text-xl transition-colors duration-300 shadow-lg">Send Message</button>
         </form>
-        </section>
+
+        <div class="social-links mt-12">
+            <a href="https://github.com/KENZO985" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+    </section>
+
+    <footer class="bg-black py-6 text-center text-gray-400 text-sm">
+        &copy; <span id="current-year"></span> Prince Johnson. All rights reserved.
+    </footer>
+
 
     <script>
-        const sections = ['home', 'about', 'projects', 'contact']; // Ensure 'projects' matches your new ID
+        const sections = ['home', 'about', 'projects', 'contact']; // Ensure these IDs match your sections
+
         function showSection(id) {
             sections.forEach(sec => {
-                document.getElementById(sec).classList.add('hidden-section');
+                const sectionElement = document.getElementById(sec);
+                if (sectionElement) { // Safety check: ensure element exists
+                    sectionElement.classList.add('hidden-section');
+                }
             });
-            document.getElementById(id).classList.remove('hidden-section');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            history.pushState(null, '', `#${id}`); // Update URL hash
+            const targetSection = document.getElementById(id);
+            if (targetSection) { // Safety check: ensure target element exists
+                targetSection.classList.remove('hidden-section');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.pushState(null, '', `#${id}`); // Update URL hash for direct links
+            }
         }
 
-        // On page load, check if there's a hash and show that section
+        // On page load, check for URL hash to display the correct section
         document.addEventListener('DOMContentLoaded', () => {
-            const initialHash = window.location.hash.substring(1);
+            const initialHash = window.location.hash.substring(1); // Get hash without '#'
             if (initialHash && sections.includes(initialHash)) {
                 showSection(initialHash);
             } else {
-                showSection('home');
+                showSection('home'); // Default to home if no valid hash
             }
+
+            // Update footer copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
         });
     </script>
+
     <script src="script.js"></script>
+
 </body>
 </html>
