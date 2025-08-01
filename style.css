@@ -29,27 +29,35 @@
 /* Project Grid Container */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    /* This makes them responsive: minmax ensures they are at least 300px wide,
+       and '1fr' makes them take equal space, wrapping as needed. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem; /* Space between cards */
-    max-width: 1200px; /* Max width of the grid */
-    margin: 0 auto; /* Center the grid */
+    max-width: 1200px; /* Max width of the grid container */
+    margin: 0 auto; /* Center the grid container horizontally */
     padding-bottom: 3rem; /* Padding at bottom */
+    padding-left: 1rem; /* Added horizontal padding for smaller screens */
+    padding-right: 1rem; /* Added horizontal padding for smaller screens */
 }
 
 /* Individual Project Card Styles */
 .project-card {
     padding: 2rem;
     text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ensures buttons are at bottom */
+    display: flex; /* Use flexbox for internal layout of card */
+    flex-direction: column; /* Stack contents vertically */
+    justify-content: space-between; /* Pushes buttons to the bottom if content varies */
+    height: 100%; /* Make all cards in a row the same height for even grid */
+    box-sizing: border-box; /* Ensures padding/border are included in height */
 }
 
+/* Ensure images within cards are responsive */
 .project-card img {
     max-width: 100%;
+    height: auto; /* Ensure aspect ratio is maintained */
     border-radius: 6px;
     margin-bottom: 1rem;
-    object-fit: cover; /* Ensures images cover area */
+    object-fit: cover;
 }
 
 .project-card h3 {
@@ -66,10 +74,10 @@
 }
 
 .project-card .project-links {
-    margin-top: 1rem; /* Space above links */
+    margin-top: auto; /* Pushes links to the bottom if flex-direction: column; is used on parent */
     display: flex;
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
     gap: 0.75rem;
-    flex-wrap: wrap;
 }
 
 .project-card .project-links a {
@@ -119,6 +127,11 @@
 
 .cell:hover {
     background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter on hover */
+}
+
+.cell.win { /* Style for winning cells in Tic Tac Toe */
+    background-color: rgba(255, 165, 0, 0.3); /* Subtle orange highlight for win */
+    border-color: #ffa500; /* Orange border */
 }
 
 .message {
@@ -187,6 +200,8 @@
     color: #f97316; /* Orange on hover */
     transform: translateY(-5px) scale(1.1); /* Lift and slight enlarge */
 }
+
+/* New styles for Contact Section Items (to match Nadeem's) */
 .contact-item {
     display: flex; /* Makes icon and text align horizontally */
     align-items: center; /* Vertically centers icon and text */
@@ -207,6 +222,7 @@
 .contact-item:hover {
     color: #f97316; /* Orange hover for text */
 }
+
 /* General button styling (for game resets) - Tailwind classes preferred where possible */
 /* These are just examples if you needed them for non-Tailwind buttons */
 /*
