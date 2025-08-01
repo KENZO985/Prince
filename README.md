@@ -9,42 +9,39 @@ Welcome to the source code for my personal website: **Hey, I'm Prince Johnson �
 ## 📁 Project Structure
 
 📦 Prince/
-├── index.html
-├── about.html
-├── projects.html
-├── favicon.png
-├── style.css
-├── script.js
-└── README.md
-
+├── index.html         
+├── favicon.png        
+├── style.css          
+├── script.js         
+└── README.md          
 
 ---
 
 ## 🌐 Technologies Used
 
-- **HTML5** – Structure of the website  
-- **CSS3** – Styling and layout  
-- **JavaScript** – Interactivity and animations  
-- **Responsive Design** – Mobile-friendly layouts  
+- **HTML5** – Structure of the website
+- **CSS3** – Custom styling and layout
+- **JavaScript** – Interactivity, animations, and game logic
+- **Responsive Design** – Ensures mobile-friendly layouts across devices
 
 ---
 
 ## 🎯 Key Features
 
-- 🎮 Web games (Tic Tac Toe and Memory Match)  
-- 💡 Smooth scroll-based transitions  
-- 📱 Mobile responsive design  
-- 🎨 Minimal and clean UI inspired by modern portfolios  
-- 🧭 Sticky navbar with navigation links  
-- 🔗 Contact section with social links and hover animations  
+- 🎮 **Interactive Web Games** – Play Tic Tac Toe and Memory Match directly on the site.
+- 💡 **Smooth Scroll Transitions** – Elegant scrolling between sections for enhanced user experience.
+- 📱 **Mobile Responsive Design** – Optimized for viewing on various screen sizes.
+- 🎨 **Modern & Minimal UI** – Clean, dark-themed interface with subtle glassmorphism effects.
+- 🧭 **Sticky Navbar** – Always accessible navigation with hover animations.
+- 🔗 **Direct Contact Links** – Easy access to email and social media profiles.
 
 ---
 
 ## ✨ Future Additions
 
-- 🕹️ Add more web-based games  
-- 📂 Project showcase integration   
-- 🌗 Dark/light theme toggle  
+- 🕹️ Expand game library with more web-based interactive experiences.
+- 📂 Enhance project showcase with more detailed views and filters.
+- 🌗 Implement a dark/light theme toggle.
 
 ---
 
