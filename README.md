@@ -43,8 +43,7 @@ Welcome to the source code for my personal website: **Hey, I'm Prince Johnson �
 ## ✨ Future Additions
 
 - 🕹️ Add more web-based games  
-- 📂 Project showcase integration  
-- 📝 Blog or notes section for technical writing  
+- 📂 Project showcase integration   
 - 🌗 Dark/light theme toggle  
 
 ---
