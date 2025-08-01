@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prince Johnson | Portfolio</title>
+  <title>About - Prince Johnson</title>
   <link rel="icon" href="favicon.png" type="image/png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -14,21 +14,27 @@
       transition: opacity 0.6s ease-in-out;
     }
     body.fade-in { opacity: 1; }
-    .section { display: none; }
-    .section.active { display: block; }
+    .typing::after {
+      content: '|';
+      animation: blink 0.8s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
   </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-gradient-to-b from-[#0F172A] to-black text-white font-sans">
 
   <!-- Navbar -->
-  <header class="bg-gray-900 shadow-md py-4 fixed top-0 w-full z-50">
+  <header class="bg-gray-900 py-4 fixed top-0 w-full z-50">
     <nav class="container mx-auto px-4 flex justify-between items-center">
       <h1 class="text-xl font-bold text-white">Prince Johnson</h1>
       <ul class="hidden md:flex space-x-6 text-gray-300">
-        <li><a href="#home" class="nav-link hover:text-white transition">HOME</a></li>
-        <li><a href="#about" class="nav-link hover:text-white transition">ABOUT</a></li>
-        <li><a href="#games" class="nav-link hover:text-white transition">GAMES</a></li>
-        <li><a href="#contact" class="nav-link hover:text-white transition">CONTACT</a></li>
+        <li><a href="index.html" class="hover:text-white transition">HOME</a></li>
+        <li><a href="about.html" class="hover:text-white transition">ABOUT</a></li>
+        <li><a href="projects.html" class="hover:text-white transition">PROJECTS</a></li>
+        <li><a href="index.html#contact" class="hover:text-white transition">CONTACT</a></li>
       </ul>
       <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,66 +42,82 @@
         </svg>
       </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden absolute right-4 top-16 bg-gray-800 text-white rounded-md shadow-lg w-40">
+      <a href="index.html" class="block px-4 py-2 hover:bg-gray-700">HOME</a>
+      <a href="about.html" class="block px-4 py-2 hover:bg-gray-700">ABOUT</a>
+      <a href="projects.html" class="block px-4 py-2 hover:bg-gray-700">PROJECTS</a>
+      <a href="index.html#contact" class="block px-4 py-2 hover:bg-gray-700">CONTACT</a>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="section active min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24" data-aos="fade-up">
-    <h1 class="text-5xl font-bold text-white mb-4">Welcome to My World</h1>
-    <p class="text-xl text-gray-300">I'm <span class="text-white font-semibold">Prince Johnson</span></p>
-  </section>
-
   <!-- About Section -->
-  <section id="about" class="section min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-4">About Me</h2>
-    <p class="text-lg text-gray-300">This is the about section.</p>
-  </section>
-
-  <!-- Games Section -->
-  <section id="games" class="section min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-4">My Games</h2>
-    <p class="text-lg text-gray-300">Game content appears here when clicked from navbar.</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-10 text-white">CONTACTS</h2>
-    <div class="space-y-6 text-lg">
-      <p><strong>Email:</strong> prince308j@gmail.com</p>
-      <p><strong>LinkedIn:</strong> <a href="#" class="underline text-blue-400">LinkedIn</a></p>
-      <p><strong>Instagram:</strong> @prince_308_j</p>
-      <p><strong>GitHub:</strong> <a href="#" class="underline text-gray-400">GitHub</a></p>
+  <section class="min-h-screen flex flex-col items-center justify-center pt-24 px-4" data-aos="fade-down">
+    <div class="bg-gray-800 rounded-xl shadow-lg p-6 transform hover:scale-105 transition duration-500 max-w-lg text-center">
+      <img src="prince.jpg" alt="Prince Johnson" class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-md" />
+      <h1 class="text-4xl font-bold mt-4 typing text-white">About Me</h1>
+      <p class="text-gray-300 mt-4">
+        I'm a web game developer and tech enthusiast, currently diving deep into cybersecurity, ethical hacking, and programming. I love building creative projects and challenging myself with new tech tools and platforms. <br><br>
+        <a href="https://github.com/KENZO985" target="_blank" class="underline text-blue-400">GitHub — KENZO985</a>
+      </p>
     </div>
   </section>
 
-  <footer class="bg-gray-800 py-4 text-center text-gray-500">
+  <hr class="w-3/4 border-gray-600 my-12 mx-auto" />
+
+  <!-- Skills Section -->
+  <section class="px-4 pb-20" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="bg-gray-700 px-6 py-4 rounded-md text-left text-gray-300">
+        <h3 class="font-semibold text-white">💻 Programming</h3>
+        <ul class="list-disc list-inside">
+          <li>Python, C, Bash</li>
+          <li>HTML, CSS, JavaScript</li>
+        </ul>
+      </div>
+      <div class="bg-gray-700 px-6 py-4 rounded-md text-left text-gray-300">
+        <h3 class="font-semibold text-white">🛠 Tools</h3>
+        <ul class="list-disc list-inside">
+          <li>VS Code, GitHub, Canva</li>
+          <li>Tailwind CSS, React</li>
+        </ul>
+      </div>
+      <div class="bg-gray-700 px-6 py-4 rounded-md text-left text-gray-300">
+        <h3 class="font-semibold text-white">🚀 Goals</h3>
+        <ul class="list-disc list-inside">
+          <li>Become a skilled cybersecurity analyst</li>
+          <li>Build and publish interactive games</li>
+          <li>Contribute to open-source</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Home -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="index.html" class="bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg border border-white hover:bg-white hover:text-black transition-all duration-300 ease-in-out font-semibold">
+      ⬅ Back Home
+    </a>
+  </div>
+
+  <footer class="bg-gray-800 py-4 text-center text-gray-400">
     &copy; 2025 Prince Johnson
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-    window.onload = () => document.body.classList.add('fade-in');
-
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.section');
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        sections.forEach(sec => sec.classList.remove('active'));
-        document.getElementById(targetId).classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
+    AOS.init({ duration: 800, once: false });
 
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
-    if (menuBtn && mobileMenu) {
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    }
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    document.body.classList.add('fade-in');
   </script>
 </body>
 </html>
