@@ -1,6 +1,6 @@
-# 🖥️ Prince Johnson: Web Game Developer Portfolio
+# 🖥️ Personal Portfolio Website – Prince Johnson
 
-Welcome! This is the source code for my personal website.
+Welcome to the source code for my personal website: **Hey, I'm Prince Johnson – Web Game Developer & Tech Enthusiast**
 
 🔗 **Live Site:** [https://kenzo985.github.io/Prince](https://kenzo985.github.io/Prince)
 
@@ -9,44 +9,40 @@ Welcome! This is the source code for my personal website.
 ## 📁 Project Structure
 
 📦 Prince/
-├── index.html
-├── favicon.png
-├── style.css
-├── script.js
-└── README.md
+├── index.html         
+├── favicon.png        
+├── style.css          
+├── script.js          
+└── README.md          
 
 ---
 
-## 🌐 Technologies
+## 🌐 Technologies Used
 
--   **HTML5**
--   **CSS3**
--   **Tailwind CSS**
--   **JavaScript**
--   **Font Awesome**
--   **Responsive Design**
-
----
-
-## 🎯 Features
-
--   📄 **Single-Page App (SPA).** Seamless navigation.
--   🎮 **Interactive Web Games.** Play Tic Tac Toe & Memory Match.
--   💡 **Smooth Scroll.** Elegant transitions.
--   📱 **Mobile-Friendly.** Flawless on any device.
--   🎨 **Modern UI.** Clean, dark, and minimalist.
--   🧭 **Sticky Navbar.** Easy access.
--   🔗 **Direct Contact.** Quick links to my profiles.
--   ⌨️ **Typing Effect.** Dynamic hero animation.
+- **HTML5** – Structure of the website
+- **CSS3** – Custom styling and layout
+- **JavaScript** – Interactivity, animations, and game logic
+- **Font Awesome** – Icon library for social links and features
+- **Responsive Design** – Ensures mobile-friendly layouts across devices
 
 ---
 
-## ✨ Future Plans
+## 🎯 Key Features
 
--   🕹️ More web games.
--   📂 Enhanced project showcase.
--   📝 Blog/technical notes.
--   🌗 Dark/light theme toggle.
+- 🎮 **Interactive Web Games** – Play Tic Tac Toe and Memory Match directly on the site.
+- 💡 **Smooth Scroll Transitions** – Elegant scrolling between sections for enhanced user experience.
+- 📱 **Mobile Responsive Design** – Optimized for viewing on various screen sizes.
+- 🎨 **Modern & Minimal UI** – Clean, dark-themed interface with subtle glassmorphism effects.
+- 🧭 **Sticky Navbar** – Always accessible navigation with hover animations.
+- 🔗 **Direct Contact Links** – Easy access to email and social media profiles.
+
+---
+
+## ✨ Future Additions
+
+- 🕹️ Expand game library with more web-based interactive experiences.
+- 📂 Enhance project showcase with more detailed views and filters.
+- 🌗 Implement a dark/light theme toggle.
 
 ---
 
