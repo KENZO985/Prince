@@ -44,16 +44,23 @@
 <body class="bg-gradient-to-b from-gray-900 to-black text-white font-sans min-h-screen">
 
     <header class="bg-black py-4 fixed w-full z-50 shadow-lg">
-        <nav class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-orange-400">Prince Johnson</h1>
-            <ul class="flex space-x-6">
-                <li><a href="#" onclick="showSection('home')" class="hover:text-orange-400 transition-colors duration-300">HOME</a></li>
-                <li><a href="#" onclick="showSection('about')" class="hover:text-orange-400 transition-colors duration-300">ABOUT</a></li>
-                <li><a href="#" onclick="showSection('projects')" class="hover:text-orange-400 transition-colors duration-300">PROJECTS</a></li>
-                <li><a href="#" onclick="showSection('contact')" class="hover:text-orange-400 transition-colors duration-300">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="container mx-auto px-4 flex justify-between items-center relative">
+        <h1 class="text-xl font-bold text-orange-400 z-20">Prince Johnson</h1>
+
+        <button id="mobile-menu-button" class="md:hidden text-white text-2xl focus:outline-none z-20">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul id="main-nav" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-6
+                   absolute md:static top-full left-0 w-full bg-black md:bg-transparent
+                   py-4 md:py-0 px-4 md:px-0 text-center shadow-lg md:shadow-none z-10">
+            <li><a href="#" onclick="showSection('home'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">HOME</a></li>
+            <li><a href="#" onclick="showSection('about'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">ABOUT</a></li>
+            <li><a href="#" onclick="showSection('projects'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">PROJECTS</a></li>
+            <li><a href="#" onclick="showSection('contact'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">CONTACT</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section id="home" class="pt-32 px-6 text-center min-h-screen flex flex-col justify-center items-center">
         <h2 class="text-5xl md:text-6xl font-extrabold typing text-white mb-4">I'm Prince Johnson</h2>
