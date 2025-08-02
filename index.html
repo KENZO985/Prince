@@ -13,10 +13,21 @@
     <link rel="stylesheet" href="style.css" />
 
     <style>
-        /* This rule must be present and correctly defined for sections to hide */
-        /* !important added here to ensure it overrides any conflicting display properties */
+        /* Base styles for all sections to enable smooth transitions */
+        section {
+            opacity: 1;
+            visibility: visible;
+            /* Apply a smooth transition for opacity and visibility changes */
+            transition: opacity 0.7s ease-out, visibility 0.7s ease-out;
+            /* Ensures content within visible sections is clickable */
+            pointer-events: auto;
+        }
+
+        /* How hidden sections will look - crucial for the fade effect */
         .hidden-section {
-            display: none !important;
+            opacity: 0 !important; /* Make it completely transparent */
+            visibility: hidden !important; /* Hide it from screen readers and layout */
+            pointer-events: none !important; /* IMPORTANT: Prevents interaction with hidden content */
         }
 
         /* Typing effect for home section H2 */
