@@ -2,7 +2,7 @@
 
 Welcome to the source code for my personal website: **Hey, I'm Prince Johnson – Web Game Developer & Tech Enthusiast**
 
-🔗 **Live Site:** [https://kenzo985.github.io/Prince](https://kenzo985.github.io/Prince)
+🔗 **Live Site:** [https://PRINCE308-HUB.github.io/Prince-Portfolio](https://PRINCE308-HUB.github.io/Prince-Portfolio)
 
 ---
 
@@ -10,11 +10,11 @@ Welcome to the source code for my personal website: **Hey, I'm Prince Johnson �
 
 📦 Prince/
 
-├── index.html         
-├── favicon.png        
-├── style.css          
-├── script.js          
-└── README.md          
+├── index.html
+├── favicon.png
+├── style.css
+├── script.js
+└── README.md
 
 ---
 
