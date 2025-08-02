@@ -145,6 +145,34 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1000); // 1 second delay
         }
     }
+    // --- Mobile Menu Toggle Logic ---
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mainNav = document.getElementById('main-nav');
+
+function toggleMobileMenu() {
+    mainNav.classList.toggle('hidden'); // Toggles the 'hidden' class on the navigation list
+    // Optional: Change icon from bars to times (X) when open
+    const menuIcon = mobileMenuButton.querySelector('i');
+    if (mainNav.classList.contains('hidden')) {
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+    } else {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+    }
+}
+
+// Add event listener to the hamburger button
+mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+// Add event listeners to nav links (already done inline, but adding here for completeness if you refactor)
+// mainNav.querySelectorAll('a').forEach(link => {
+//     link.addEventListener('click', () => {
+//         if (!mainNav.classList.contains('hidden')) { // If menu is open
+//             toggleMobileMenu(); // Close it
+//         }
+//     });
+// });
 
     function resetBoard() {
         flippedCards = [];
