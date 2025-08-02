@@ -69,10 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Add a simple style for '.win' class to your style.css
-    // .cell.win { background-color: rgba(255, 165, 0, 0.3); } /* Example: subtle orange highlight */
-
-
     ticTacToeResetBtn.addEventListener('click', startGame);
     startGame(); // Initialize Tic Tac Toe on page load
 
@@ -145,27 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1000); // 1 second delay
         }
     }
-    // --- Mobile Menu Toggle Logic ---
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mainNav = document.getElementById('main-nav');
-
-function toggleMobileMenu() {
-    mainNav.classList.toggle('hidden'); // Toggles the 'hidden' class on the navigation list
-    // Optional: Change icon from bars to times (X) when open
-    const menuIcon = mobileMenuButton.querySelector('i');
-    if (mainNav.classList.contains('hidden')) {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-    } else {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-    }
-}
-
-// Add event listener to the hamburger button
-mobileMenuButton.addEventListener('click', toggleMobileMenu);
-
-
 
     function resetBoard() {
         flippedCards = [];
@@ -174,5 +149,37 @@ mobileMenuButton.addEventListener('click', toggleMobileMenu);
 
     memoryGameResetBtn.addEventListener('click', initializeMemoryGame);
     initializeMemoryGame(); // Initialize Memory Game on page load
+
+
+    // --- Mobile Menu Toggle Logic ---
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mainNav = document.getElementById('main-nav');
+
+    function toggleMobileMenu() {
+        console.log("toggleMobileMenu called!"); // FOR DEBUGGING: Check your browser's console
+        mainNav.classList.toggle('hidden'); // This is the key line
+        // Optional: Change icon from bars to times (X) when open
+        const menuIcon = mobileMenuButton.querySelector('i');
+        if (mainNav.classList.contains('hidden')) {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        } else {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        }
+    }
+
+    // Add event listener to the hamburger button
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+    // Add event listeners to nav links to ensure menu closes
+    mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (event) => {
+            // This condition ensures we only try to close if the menu is currently visible (not hidden)
+            if (!mainNav.classList.contains('hidden')) {
+                toggleMobileMenu();
+            }
+        });
+    });
 
 }); // End of DOMContentLoaded
