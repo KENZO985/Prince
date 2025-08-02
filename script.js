@@ -165,14 +165,7 @@ function toggleMobileMenu() {
 // Add event listener to the hamburger button
 mobileMenuButton.addEventListener('click', toggleMobileMenu);
 
-// Add event listeners to nav links (already done inline, but adding here for completeness if you refactor)
-// mainNav.querySelectorAll('a').forEach(link => {
-//     link.addEventListener('click', () => {
-//         if (!mainNav.classList.contains('hidden')) { // If menu is open
-//             toggleMobileMenu(); // Close it
-//         }
-//     });
-// });
+
 
     function resetBoard() {
         flippedCards = [];
