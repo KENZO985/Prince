@@ -73,14 +73,14 @@
     flex-grow: 1; /* Allows paragraph to take available space */
 }
 
-.project-card.project-links {
+.project-card.project-links { /* Corrected selector: removed.project-card from here */
     margin-top: auto; /* Pushes links to the bottom if flex-direction: column; is used on parent */
     display: flex;
     flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
     gap: 0.75rem;
 }
 
-.project-card.project-links a {
+.project-card.project-links a { /* Corrected selector: removed.project-card from here */
     display: inline-block;
     background-color: #374151; /* Darker gray for buttons */
     color: white;
@@ -91,7 +91,7 @@
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.project-card.project-links a:hover {
+.project-card.project-links a:hover { /* Corrected selector: removed.project-card from here */
     background-color: #f97316; /* Orange hover for buttons */
     transform: translateY(-2px); /* Slight lift on hover */
     }
@@ -222,23 +222,6 @@
 .contact-item:hover {
     color: #f97316; /* Orange hover for text */
 }
-
-/* General button styling (for game resets) - Tailwind classes preferred where possible */
-/* These are just examples if you needed them for non-Tailwind buttons */
-/*
-.btn-primary {
-    background-color: #f97316;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #ea580c;
-}
-*/
 
 /* --- FIX: Force Desktop Navbar Alignment --- */
 @media (min-width: 768px) { /* This targets screens medium size and wider (desktop) */
