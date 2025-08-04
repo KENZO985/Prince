@@ -259,3 +259,35 @@
         background-color: transparent !important; /* Ensure no black background */
     }
 }
+/* Base styles for sections to enable transitions */
+section {
+    transition: opacity 0.5s ease-in-out; /* Define transition for opacity */
+    min-height: 100vh; /* Keep min-h-screen for active section */
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+/* Class for hiding (opacity 0, then display none) */
+.hidden-section-fade-out {
+    opacity: 0!important;
+    pointer-events: none!important; /* Disable interaction while fading out */
+}
+
+/* Class for active section (opacity 1) */
+.active-section-fade-in {
+    opacity: 1!important;
+    pointer-events: auto!important; /* Enable interaction */
+}
+
+/* Initial state for sections that are not 'home' */
+/* These should start hidden (display: none) to prevent initial unwanted scrolling */
+#about, #games, #projects, #contact {
+    display: none; /* Crucial for initial hiding and preventing scroll */
+    opacity: 0; /* Ensures they start invisible for fade-in */
+}
+
+/* The 'home' section should be initially visible */
+#home {
+    display: block; /* Or 'flex' if it's a flex container */
+    opacity: 1;
+}
