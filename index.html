@@ -248,25 +248,38 @@
     </footer>
 
     <script>
-        const sections = ['home', 'about', 'games', 'projects', 'contact']; // Updated 'projects' to 'games' and added 'projects' back
+        const sections = ['home', 'about', 'games', 'projects', 'contact'];
 
-        function showSection(id) {
-            // Hide ALL sections first
-            sections.forEach(secId => {
-                const sectionElement = document.getElementById(secId);
-                if (sectionElement) {
-                    sectionElement.classList.add('hidden-section');
+function showSection(id) {
+    sections.forEach(secId => {
+        const sectionElement = document.getElementById(secId);
+        if (sectionElement) {
+            if (secId === id) {
+                // Show target section:
+                sectionElement.style.display = 'block'; // Or 'flex' if it's a flex container
+                // Force reflow for transition to work if display was just changed
+                sectionElement.offsetHeight; // Triggers reflow
+                sectionElement.classList.remove('hidden-section-fade-out'); // Remove opacity:0 and visibility:hidden
+                sectionElement.classList.add('active-section-fade-in'); // Ensure opacity:1 and transition
+            } else {
+                // Hide other sections:
+                const currentSection = document.getElementById(secId);
+                // Only hide if currently displayed to avoid re-triggering transitions
+                if (currentSection && currentSection.style.display!== 'none') {
+                    currentSection.classList.remove('active-section-fade-in');
+                    currentSection.classList.add('hidden-section-fade-out'); // Set opacity to 0
+                    // Listen for transition end to set display: none
+                    currentSection.addEventListener('transitionend', function handler() {
+                        currentSection.style.display = 'none'; // Remove from flow after fade
+                        currentSection.removeEventListener('transitionend', handler); // Clean up listener
+                    }, { once: true }); // Ensure listener runs only once
                 }
-            });
-
-            // Then, show ONLY the target section
-            const targetSection = document.getElementById(id);
-            if (targetSection) {
-                targetSection.classList.remove('hidden-section');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                history.pushState(null, '', `#${id}`);
             }
         }
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top of page
+    history.pushState(null, '', `#${id}`); // Update URL hash
+}
 
         // On page load, check for URL hash to display the correct section
         document.addEventListener('DOMContentLoaded', () => {
