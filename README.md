@@ -23,7 +23,6 @@ Welcome to the source code for my personal website: **Hey, I'm Prince Johnson �
 - **CSS3** – Custom styling and layout
 - **JavaScript** – Interactivity, animations, and game logic
 - **Font Awesome** – Icon library for social links and features
-- **Responsive Design** – Ensures mobile-friendly layouts across devices
 
 ---
 
