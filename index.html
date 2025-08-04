@@ -93,7 +93,7 @@
                     <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
                 </button>
                 <div class="accordion-content bg-gray-800 px-6 py-4 text-gray-300 rounded-b-md">
-                    <ul class="list-disc list-inside space-y-2">
+                    <ul class="list-none space-y-2 text-gray-300 text-lg">
                         <li><i class="fab fa-python mr-2"></i> Python</li>
                         <li><i class="fas fa-wrench mr-2"></i> C</li>
                         <li><i class="fas fa-database mr-2"></i> SQL</li>
@@ -108,18 +108,18 @@
                 </button>
                 <div class="accordion-content bg-gray-800 px-6 py-4 text-gray-300 rounded-b-md">
                     <p class="font-semibold mb-2">Languages</p>
-                    <ul class="list-disc list-inside space-y-2">
+                    <ul class="list-none space-y-2 text-gray-300 text-lg">
                         <li><i class="fab fa-html5 mr-2"></i> HTML</li>
                         <li><i class="fab fa-js-square mr-2"></i> JavaScript</li>
                         <li><i class="fab fa-css3-alt mr-2"></i> CSS</li>
                     </ul>
                     <p class="font-semibold mt-3 mb-2">Code Editors</p>
-                    <ul class="list-disc list-inside space-y-2">
+                    <ul class="list-none space-y-2 text-gray-300 text-lg">
                         <li><i class="fas fa-file-code mr-2"></i> VS Code</li>
                         <li><i class="fas fa-file-alt mr-2"></i> Notepad</li>
                     </ul>
                     <p class="font-semibold mt-3 mb-2">UI/UX Tools</p>
-                    <ul class="list-disc list-inside space-y-2">
+                    <ul class="list-none space-y-2 text-gray-300 text-lg">
                         <li><i class="fas fa-palette mr-2"></i> Canva</li>
                         <li><i class="fas fa-magic mr-2"></i> Adobe</li>
                     </ul>
@@ -132,7 +132,7 @@
                     <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
                 </button>
                 <div class="accordion-content bg-gray-800 px-6 py-4 text-gray-300 rounded-b-md">
-                    <ul class="list-disc list-inside space-y-2">
+                    <ul class="list-none space-y-2 text-gray-300 text-lg">
                         <li><i class="fas fa-wrench mr-2"></i> Tailwind CSS</li>
                         <li><i class="fab fa-react mr-2"></i> React</li>
                     </ul>
@@ -145,7 +145,7 @@
                     <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
                 </button>
                 <div class="accordion-content bg-gray-800 px-6 py-4 text-gray-300 rounded-b-md">
-                    <ul class="list-disc list-inside space-y-2">
+                    <ul class="list-none space-y-2 text-gray-300 text-lg">
                         <li><i class="fab fa-github mr-2"></i> GitHub</li>
                         <li><i class="fab fa-node-js mr-2"></i> Node.js</li>
                     </ul>
@@ -281,7 +281,7 @@
             // document.getElementById('current-year').textContent = new Date().getFullYear(); // Commented out to avoid error if element is missing on broken page.
         });
 
-        // --- START OF EMBEDDED SCRIPT.JS CONTENT ---
+        // --- PASTE THE ENTIRE CONTENT OF YOUR script.js FILE HERE ---
 
         // --- Tic Tac Toe Game Logic ---
         const cells = document.querySelectorAll('#ticTacToeBoard .cell'); // Select cells within the specific board
@@ -293,7 +293,7 @@
         const winCombos = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
             [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-            [0, 4, 8], [2, 4, 6]             // Diagonals
+            [0, 4, 8], [2, 5, 6]             // Diagonals -- ERROR HERE
         ];
 
         function startGame() {
@@ -495,6 +495,7 @@
                 });
             });
         });
+    });
     </script>
 </body>
 </html>
