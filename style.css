@@ -259,3 +259,8 @@
         background-color: transparent !important; /* Ensure no black background */
     }
 }
+.hidden-section {
+    opacity: 0!important;
+    visibility: hidden!important;
+    pointer-events: none!important;
+}
