@@ -251,33 +251,22 @@
         const sections = ['home', 'about', 'games', 'projects', 'contact']; // Updated 'projects' to 'games' and added 'projects' back
 
         function showSection(id) {
-    sections.forEach(secId => {
-        const sectionElement = document.getElementById(secId);
-        if (sectionElement && secId!== id) {
-            // Start fade out (requires CSS transition on sections)
-            sectionElement.style.opacity = '0';
-            sectionElement.style.visibility = 'hidden';
-            // After transition, set display: none
-            // This setTimeout duration should match the CSS transition duration
-            setTimeout(() => {
-                sectionElement.style.display = 'none';
-            }, 300); // Example: if transition is 0.3s
-        }
-    });
+            // Hide ALL sections first
+            sections.forEach(secId => {
+                const sectionElement = document.getElementById(secId);
+                if (sectionElement) {
+                    sectionElement.classList.add('hidden-section');
+                }
+            });
 
-    const targetSection = document.getElementById(id);
-    if (targetSection) {
-        // First, set display property to make it part of layout
-        targetSection.style.display = 'flex'; // Or 'block', 'grid' based on section's default display
-        // Small delay to allow display change to render before starting opacity transition
-        setTimeout(() => {
-            targetSection.style.opacity = '1';
-            targetSection.style.visibility = 'visible';
-        }, 10); // Minimal delay
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        history.pushState(null, '', `#${id}`);
-    }
-}
+            // Then, show ONLY the target section
+            const targetSection = document.getElementById(id);
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.pushState(null, '', `#${id}`);
+            }
+        }
 
         // On page load, check for URL hash to display the correct section
         document.addEventListener('DOMContentLoaded', () => {
@@ -289,10 +278,10 @@
             }
 
             // Update footer copyright year
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+            // document.getElementById('current-year').textContent = new Date().getFullYear(); // Commented out to avoid error if element is missing on broken page.
         });
 
-        // --- PASTE THE ENTIRE CONTENT OF YOUR script.js FILE HERE ---
+        // --- START OF EMBEDDED SCRIPT.JS CONTENT ---
 
         // --- Tic Tac Toe Game Logic ---
         const cells = document.querySelectorAll('#ticTacToeBoard .cell'); // Select cells within the specific board
@@ -346,8 +335,166 @@
             return winCombos.some(combo => {
                 return combo.every(index => {
                     return cells[index].textContent === currentTurn;
+                    });
                 });
+            }
+
+        function checkDraw() {
+            return [...cells].every(cell => cell.textContent !== '');
+        }
+
+        function highlightWinningCells(winningTurn) {
+            winCombos.forEach(combo => {
+                if (combo.every(index => cells[index].textContent === winningTurn)) {
+                    combo.forEach(index => cells[index].classList.add('win')); // Add a 'win' class for styling
+                }
             });
         }
 
-        function check
+        ticTacToeResetBtn.addEventListener('click', startGame);
+        startGame(); // Initialize Tic Tac Toe on page load
+
+        // --- Memory Match Game Logic ---
+        const memoryGameContainer = document.getElementById('memoryGame');
+        const memoryGameMessage = document.getElementById('memoryGameMessage');
+        const memoryGameResetBtn = document.getElementById('memoryGameReset');
+
+        const emojis = ['🍕','🍔','🍟','🌮','🍩','🍪','🍫','🍿'];
+        let shuffledCards = [];
+        let flippedCards = []; // Stores the 2 cards currently flipped
+        let matchedPairs = 0;
+        let lockBoard = false; // To prevent rapid clicks during timeout
+
+        function initializeMemoryGame() {
+            memoryGameContainer.innerHTML = ''; // Clear previous cards
+            shuffledCards = [...emojis, ...emojis].sort(() => 0.5 - Math.random());
+            flippedCards = [];
+            matchedPairs = 0;
+            lockBoard = false;
+            memoryGameMessage.textContent = 'Find the matching pairs!';
+
+            shuffledCards.forEach(val => {
+                const card = document.createElement('div');
+                card.classList.add('memory-card');
+                card.dataset.val = val; // Store the emoji value
+                card.textContent = '❓'; // Display question mark initially
+                card.addEventListener('click', flipCard);
+                memoryGameContainer.appendChild(card);
+            });
+        }
+
+        function flipCard() {
+            if (lockBoard) return; // Don't allow clicks if board is locked
+            if (this === flippedCards[0]) return; // Prevent double-clicking the same card
+
+            this.textContent = this.dataset.val; // Reveal the emoji
+            this.classList.add('flipped'); // Add a class to indicate it's flipped (optional styling)
+
+            flippedCards.push(this);
+
+            if (flipped.length === 2) {
+                lockBoard = true; // Lock the board
+                checkForMatch();
+            }
+        }
+
+        function checkForMatch() {
+            const [card1, card2] = flippedCards;
+            if (card1.dataset.val === card2.dataset.val) {
+                // It's a match!
+                matchedPairs++;
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                card1.removeEventListener('click', flipCard); // Remove listeners so they can't be clicked again
+                card2.removeEventListener('click', flipCard);
+                resetBoard();
+
+                if (matchedPairs === emojis.length) {
+                    memoryGameMessage.textContent = 'Congratulations! You found all pairs!';
+                }
+            } else {
+                // Not a match, flip back after a delay
+                setTimeout(() => {
+                    card1.textContent = '❓';
+                    card2.textContent = '❓';
+                    card1.classList.remove('flipped');
+                    card2.classList.remove('flipped');
+                    resetBoard();
+                }, 1000); // 1 second delay
+            }
+        }
+
+        function resetBoard() {
+            flippedCards = [];
+            lockBoard = false;
+        }
+
+        memoryGameResetBtn.addEventListener('click', initializeMemoryGame);
+        initializeMemoryGame(); // Initialize Memory Game on page load
+
+
+        // --- Mobile Menu Toggle Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mainNav = document.getElementById('main-nav');
+
+        function toggleMobileMenu() {
+            console.log("toggleMobileMenu called!"); // FOR DEBUGGING: Check your browser's console
+            mainNav.classList.toggle('hidden'); // This is the key line
+            // Optional: Change icon from bars to times (X) when open
+            const menuIcon = mobileMenuButton.querySelector('i');
+            if (mainNav.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            }
+        }
+
+        // Add event listener to the hamburger button
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // Add event listeners to nav links to ensure menu closes
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                // This condition ensures we only try to close if the menu is currently visible (not hidden)
+                if (!mainNav.classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Initialize AOS 
+        AOS.init({ once: true }); 
+        
+        // --- Accordion Logic (from Nadeem's site, adapted) ---
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                // Toggle active class on the header
+                header.classList.toggle('active');
+
+                // Get the content panel
+                const content = header.nextElementSibling;
+                if (content.classList.contains('active')) {
+                    // If it's active, hide it (remove active class and collapse height)
+                    content.classList.remove('active');
+                    content.style.maxHeight = null; // Reset max-height
+                } else {
+                    // If not active, show it (add active class and set max-height)
+                    content.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + "px"; // Set max-height to content's actual height
+                }
+
+                // Close other open accordions (optional, but good UX)
+                document.querySelectorAll('.accordion-header').forEach(otherHeader => {
+                    if (otherHeader !== header && otherHeader.classList.contains('active')) {
+                        otherHeader.classList.remove('active');
+                        otherHeader.nextElementSibling.classList.remove('active');
+                        otherHeader.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
