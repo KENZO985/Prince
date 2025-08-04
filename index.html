@@ -8,20 +8,14 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" xintegrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> 
 
     <style>
-        /* This rule must be present and correctly defined for sections to hide */
-        /* !important is crucial here to ensure it overrides any conflicting display properties */
-        .hidden-section {
-            display: none !important;
-        }
-
         /* Typing effect for home section H2 */
-        .typing::after {
+       .typing::after {
             content: '|';
             animation: blink 0.8s infinite;
         }
@@ -42,15 +36,15 @@
             </button>
 
             <ul id="main-nav" class="
-                hidden                /* Hidden by default on mobile */
-                md:flex               /* Display as flex on medium screens and up (desktop) */
-                md:space-x-6          /* Horizontal spacing between links on desktop */
-                md:ml-auto            /* PUSHES links to the right on desktop */
-                list-none             /* Removes default list item dots */
+                hidden          /* Hidden by default on mobile */
+                md:flex         /* Display as flex on medium screens and up (desktop) */
+                md:space-x-6    /* Horizontal spacing between links on desktop */
+                md:ml-auto      /* PUSHES links to the right on desktop */
+                list-none       /* Removes default list item dots */
 
                 /* Mobile dropdown specific styling - these will apply when 'hidden' is removed by JS on mobile */
-                flex flex-col space-y-4           /* Vertical stacking and spacing for mobile dropdown */
-                absolute top-full left-0 w-full   /* Positioning for mobile dropdown */
+                flex flex-col space-y-4        /* Vertical stacking and spacing for mobile dropdown */
+                absolute top-full left-0 w-full    /* Positioning for mobile dropdown */
                 bg-black py-4 px-4 text-center shadow-lg z-10 /* Styling for mobile dropdown */
             ">
                 <li><a href="#" onclick="showSection('home'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">HOME</a></li>
@@ -62,12 +56,12 @@
         </nav>
     </header>
 
-    <section id="home" class="pt-32 px-6 text-center min-h-screen flex flex-col justify-center items-center" data-aos="fade-up">
+    <section id="home" class="pt-32 px-6 text-center min-h-screen flex flex-col justify-center items-center section-transition" data-aos="fade-up">
         <h2 class="text-5xl md:text-6xl font-extrabold typing text-white mb-4">I'm Prince Johnson</h2>
         <p class="mt-4 text-gray-300 text-lg md:text-xl">Game Developer | Cybersecurity Learner | Creative Coder</p>
     </section>
 
-    <section id="about" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-16" data-aos="fade-up">
+    <section id="about" class="pt-24 px-6 text-center bg-gray-900 py-16 section-transition" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-8 text-orange-400">About Me</h2>
         <div class="flex flex-col md:flex-row items-center justify-center max-w-4xl mx-auto gap-8 mb-12">
             <img src="personal-photo.jpg" alt="Prince Johnson" class="w-48 h-48 rounded-full object-cover mx-auto mb-4 border-4 border-orange-400 shadow-xl" />
@@ -163,7 +157,7 @@
         </ul>
     </section>
 
-    <section id="games" class="hidden-section pt-24 px-6 text-center bg-black py-16" data-aos="fade-up">
+    <section id="games" class="pt-24 px-6 text-center bg-black py-16 section-transition" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-8 text-orange-400">My Games</h2>
         <p class="text-gray-300 text-lg mb-12">Here are some interactive web games I've built, with more coming soon!</p>
 
@@ -201,7 +195,7 @@
         </div>
     </section>
 
-    <section id="projects" class="hidden-section pt-24 px-6 text-center bg-black py-16 min-h-screen flex flex-col justify-center items-center" data-aos="fade-up">
+    <section id="projects" class="pt-24 px-6 text-center bg-black py-16 min-h-screen flex flex-col justify-center items-center section-transition" data-aos="fade-up">
         <i class="fas fa-triangle-exclamation text-6xl text-orange-400 mb-8 animate-pulse"></i>
         <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Projects Coming Soon</h2>
         <p class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto">
@@ -215,8 +209,7 @@
         </div>
     </section>
 
-
-    <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-20 md:py-32 flex flex-col items-center justify-center" data-aos="fade-up">
+    <section id="contact" class="pt-24 px-6 text-center bg-gray-900 py-20 md:py-32 flex flex-col items-center justify-center section-transition" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl font-bold mb-10 md:mb-16 text-white uppercase tracking-wider">CONTACTS</h2>
 
         <div class="flex flex-col items-center space-y-8 md:space-y-10 text-white text-lg md:text-xl">
@@ -247,268 +240,6 @@
         &copy; <span id="current-year"></span> Prince Johnson.
     </footer>
 
-    <script>
-        const sections = ['home', 'about', 'games', 'projects', 'contact'];
-
-function showSection(id) {
-    sections.forEach(secId => {
-        const sectionElement = document.getElementById(secId);
-        if (sectionElement) {
-            if (secId === id) {
-                // Show target section:
-                sectionElement.style.display = 'block'; // Or 'flex' if it's a flex container
-                // Force reflow for transition to work if display was just changed
-                sectionElement.offsetHeight; // Triggers reflow
-                sectionElement.classList.remove('hidden-section-fade-out'); // Remove opacity:0 and visibility:hidden
-                sectionElement.classList.add('active-section-fade-in'); // Ensure opacity:1 and transition
-            } else {
-                // Hide other sections:
-                const currentSection = document.getElementById(secId);
-                // Only hide if currently displayed to avoid re-triggering transitions
-                if (currentSection && currentSection.style.display!== 'none') {
-                    currentSection.classList.remove('active-section-fade-in');
-                    currentSection.classList.add('hidden-section-fade-out'); // Set opacity to 0
-                    // Listen for transition end to set display: none
-                    currentSection.addEventListener('transitionend', function handler() {
-                        currentSection.style.display = 'none'; // Remove from flow after fade
-                        currentSection.removeEventListener('transitionend', handler); // Clean up listener
-                    }, { once: true }); // Ensure listener runs only once
-                }
-            }
-        }
-    });
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top of page
-    history.pushState(null, '', `#${id}`); // Update URL hash
-}
-
-        // On page load, check for URL hash to display the correct section
-        document.addEventListener('DOMContentLoaded', () => {
-            const initialHash = window.location.hash.substring(1);
-            if (initialHash && sections.includes(initialHash)) {
-                showSection(initialHash);
-            } else {
-                showSection('home'); // Default to home if no valid hash
-            }
-
-            // Update footer copyright year
-            // document.getElementById('current-year').textContent = new Date().getFullYear(); // Commented out to avoid error if element is missing on broken page.
-        });
-
-        // --- PASTE THE ENTIRE CONTENT OF YOUR script.js FILE HERE ---
-
-        // --- Tic Tac Toe Game Logic ---
-        const cells = document.querySelectorAll('#ticTacToeBoard .cell'); // Select cells within the specific board
-        const ticMessage = document.getElementById('ticMessage');
-        const ticTacToeResetBtn = document.getElementById('ticTacToeReset');
-
-        let turn = 'X';
-        let gameActive = true;
-        const winCombos = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-            [0, 4, 8], [2, 5, 6]             // Diagonals -- ERROR HERE
-        ];
-
-        function startGame() {
-            cells.forEach(cell => {
-                cell.textContent = ''; // Clear content
-                cell.classList.remove('win'); // Remove any win highlighting
-                cell.removeEventListener('click', handleTTTClick); // Remove old listeners
-                cell.addEventListener('click', handleTTTClick, { once: true }); // Add new listener
-            });
-            ticMessage.textContent = 'Player X\'s Turn'; // Initial message
-            turn = 'X';
-            gameActive = true;
-        }
-
-        function handleTTTClick(e) {
-            const cell = e.target;
-            if (!gameActive || cell.textContent !== '') return; // Prevent clicking if game over or cell already filled
-
-            cell.textContent = turn;
-
-            if (checkWin(turn)) {
-                ticMessage.textContent = `Player ${turn} wins!`;
-                gameActive = false;
-                highlightWinningCells(turn);
-                return;
-            }
-
-            if (checkDraw()) {
-                ticMessage.textContent = 'Draw!';
-                gameActive = false;
-                return;
-            }
-
-            turn = (turn === 'X') ? 'O' : 'X';
-            ticMessage.textContent = `Player ${turn}'s Turn`;
-        }
-
-        function checkWin(currentTurn) {
-            return winCombos.some(combo => {
-                return combo.every(index => {
-                    return cells[index].textContent === currentTurn;
-                    });
-                });
-            }
-
-        function checkDraw() {
-            return [...cells].every(cell => cell.textContent !== '');
-        }
-
-        function highlightWinningCells(winningTurn) {
-            winCombos.forEach(combo => {
-                if (combo.every(index => cells[index].textContent === winningTurn)) {
-                    combo.forEach(index => cells[index].classList.add('win')); // Add a 'win' class for styling
-                }
-            });
-        }
-
-        ticTacToeResetBtn.addEventListener('click', startGame);
-        startGame(); // Initialize Tic Tac Toe on page load
-
-        // --- Memory Match Game Logic ---
-        const memoryGameContainer = document.getElementById('memoryGame');
-        const memoryGameMessage = document.getElementById('memoryGameMessage');
-        const memoryGameResetBtn = document.getElementById('memoryGameReset');
-
-        const emojis = ['🍕','🍔','🍟','🌮','🍩','🍪','🍫','🍿'];
-        let shuffledCards = [];
-        let flippedCards = []; // Stores the 2 cards currently flipped
-        let matchedPairs = 0;
-        let lockBoard = false; // To prevent rapid clicks during timeout
-
-        function initializeMemoryGame() {
-            memoryGameContainer.innerHTML = ''; // Clear previous cards
-            shuffledCards = [...emojis, ...emojis].sort(() => 0.5 - Math.random());
-            flippedCards = [];
-            matchedPairs = 0;
-            lockBoard = false;
-            memoryGameMessage.textContent = 'Find the matching pairs!';
-
-            shuffledCards.forEach(val => {
-                const card = document.createElement('div');
-                card.classList.add('memory-card');
-                card.dataset.val = val; // Store the emoji value
-                card.textContent = '❓'; // Display question mark initially
-                card.addEventListener('click', flipCard);
-                memoryGameContainer.appendChild(card);
-            });
-        }
-
-        function flipCard() {
-            if (lockBoard) return; // Don't allow clicks if board is locked
-            if (this === flippedCards[0]) return; // Prevent double-clicking the same card
-
-            this.textContent = this.dataset.val; // Reveal the emoji
-            this.classList.add('flipped'); // Add a class to indicate it's flipped (optional styling)
-
-            flippedCards.push(this);
-
-            if (flipped.length === 2) {
-                lockBoard = true; // Lock the board
-                checkForMatch();
-            }
-        }
-
-        function checkForMatch() {
-            const [card1, card2] = flippedCards;
-            if (card1.dataset.val === card2.dataset.val) {
-                // It's a match!
-                matchedPairs++;
-                card1.classList.add('matched');
-                card2.classList.add('matched');
-                card1.removeEventListener('click', flipCard); // Remove listeners so they can't be clicked again
-                card2.removeEventListener('click', flipCard);
-                resetBoard();
-
-                if (matchedPairs === emojis.length) {
-                    memoryGameMessage.textContent = 'Congratulations! You found all pairs!';
-                }
-            } else {
-                // Not a match, flip back after a delay
-                setTimeout(() => {
-                    card1.textContent = '❓';
-                    card2.textContent = '❓';
-                    card1.classList.remove('flipped');
-                    card2.classList.remove('flipped');
-                    resetBoard();
-                }, 1000); // 1 second delay
-            }
-        }
-
-        function resetBoard() {
-            flippedCards = [];
-            lockBoard = false;
-        }
-
-        memoryGameResetBtn.addEventListener('click', initializeMemoryGame);
-        initializeMemoryGame(); // Initialize Memory Game on page load
-
-
-        // --- Mobile Menu Toggle Logic ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mainNav = document.getElementById('main-nav');
-
-        function toggleMobileMenu() {
-            console.log("toggleMobileMenu called!"); // FOR DEBUGGING: Check your browser's console
-            mainNav.classList.toggle('hidden'); // This is the key line
-            // Optional: Change icon from bars to times (X) when open
-            const menuIcon = mobileMenuButton.querySelector('i');
-            if (mainNav.classList.contains('hidden')) {
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-            } else {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-times');
-            }
-        }
-
-        // Add event listener to the hamburger button
-        mobileMenuButton.addEventListener('click', toggleMobileMenu);
-
-        // Add event listeners to nav links to ensure menu closes
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (event) => {
-                // This condition ensures we only try to close if the menu is currently visible (not hidden)
-                if (!mainNav.classList.contains('hidden')) {
-                    toggleMobileMenu();
-                }
-            });
-        });
-
-        // Initialize AOS 
-        AOS.init({ once: true }); 
-        
-        // --- Accordion Logic (from Nadeem's site, adapted) ---
-        document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', () => {
-                // Toggle active class on the header
-                header.classList.toggle('active');
-
-                // Get the content panel
-                const content = header.nextElementSibling;
-                if (content.classList.contains('active')) {
-                    // If it's active, hide it (remove active class and collapse height)
-                    content.classList.remove('active');
-                    content.style.maxHeight = null; // Reset max-height
-                } else {
-                    // If not active, show it (add active class and set max-height)
-                    content.classList.add('active');
-                    content.style.maxHeight = content.scrollHeight + "px"; // Set max-height to content's actual height
-                }
-
-                // Close other open accordions (optional, but good UX)
-                document.querySelectorAll('.accordion-header').forEach(otherHeader => {
-                    if (otherHeader !== header && otherHeader.classList.contains('active')) {
-                        otherHeader.classList.remove('active');
-                        otherHeader.nextElementSibling.classList.remove('active');
-                        otherHeader.nextElementSibling.style.maxHeight = null;
-                    }
-                });
-            });
-        });
-    });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
