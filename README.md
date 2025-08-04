@@ -32,7 +32,6 @@ Welcome to the source code for my personal website: **Hey, I'm Prince Johnson �
 
 - 🎮 **Interactive Web Games** – Play Tic Tac Toe and Memory Match directly on the site.
 - 💡 **Smooth Scroll Transitions** – Elegant scrolling between sections for enhanced user experience.
-- 📱 **Mobile Responsive Design** – Optimized for viewing on various screen sizes.
 - 🎨 **Modern & Minimal UI** – Clean, dark-themed interface with subtle glassmorphism effects.
 - 🧭 **Sticky Navbar** – Always accessible navigation with hover animations.
 - 🔗 **Direct Contact Links** – Easy access to email and social media profiles.
