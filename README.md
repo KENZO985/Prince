@@ -10,9 +10,13 @@ Welcome to the source code for my personal website: **Hey, I'm Prince Johnson �
 
 📦 Prince/
 ├── index.html
+
 ├── favicon.png
+
 ├── style.css
+
 ├── script.js
+
 └── README.md
 
 ---
