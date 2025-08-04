@@ -1,6 +1,15 @@
 // Ensure DOM is fully loaded before running game scripts
 document.addEventListener("DOMContentLoaded", () => {
 
+    document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    const homeSection = document.getElementById('home'); // Or a general content wrapper
+    if (header && homeSection) {
+        const headerHeight = header.offsetHeight; // Get computed height including padding/border
+        homeSection.style.paddingTop = `${headerHeight}px`;
+    }
+    //... rest of your DOMContentLoaded code
+});
     // --- Tic Tac Toe Game Logic ---
     const cells = document.querySelectorAll('#ticTacToeBoard .cell'); // Select cells within the specific board
     const ticMessage = document.getElementById('ticMessage');
