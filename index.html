@@ -1,243 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prince Johnson - Web Game Developer & Tech Enthusiast</title>
-    <link rel="icon" href="favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prince Johnson - Web Game Developer & Tech Enthusiast</title>
+    <link rel="icon" href="favicon.png" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
 
-    <style>
-        /* This rule must be present and correctly defined for sections to hide */
-        /* !important is crucial here to ensure it overrides any conflicting display properties */
-        .hidden-section {
-            display: none !important;
-        }
+    <style>
+        /* This rule must be present and correctly defined for sections to hide */
+        /* !important is crucial here to ensure it overrides any conflicting display properties */
+        .hidden-section {
+            display: none !important;
+        }
 
-        /* Typing effect for home section H2 */
-        .typing::after {
-            content: '|';
-            animation: blink 0.8s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-    </style>
+        /* Typing effect for home section H2 */
+        .typing::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
 </head>
 <body class="bg-gradient-to-b from-gray-900 to-black text-white font-sans min-h-screen">
 
-    <header class="bg-black py-4 fixed w-full z-50 shadow-lg">
-        <nav class="container mx-auto px-4 flex justify-between items-center relative">
-            <h1 class="text-xl font-bold text-orange-400 z-20 whitespace-nowrap">Prince Johnson</h1>
+    <header class="bg-black py-4 fixed w-full z-50 shadow-lg">
+        <nav class="container mx-auto px-4 flex justify-between items-center relative">
+            <h1 class="text-xl font-bold text-orange-400 z-20 whitespace-nowrap">Prince Johnson</h1>
 
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl focus:outline-none z-20">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button id="mobile-menu-button" class="md:hidden text-white text-2xl focus:outline-none z-20">
+                <i class="fas fa-bars"></i>
+            </button>
 
-            <ul id="main-nav" class="
-                hidden                /* Hidden by default on mobile */
-                md:flex               /* Display as flex on medium screens and up (desktop) */
-                md:space-x-6          /* Horizontal spacing between links on desktop */
-                md:ml-auto            /* PUSHES links to the right on desktop */
+            <ul id="main-nav" class="
+                hidden                /* Hidden by default on mobile */
+                md:flex               /* Display as flex on medium screens and up (desktop) */
+                md:space-x-6          /* Horizontal spacing between links on desktop */
+                md:ml-auto            /* PUSHES links to the right on desktop */
 
-                /* Mobile dropdown specific styling - these will apply when 'hidden' is removed by JS on mobile */
-                flex flex-col space-y-4           /* Vertical stacking and spacing for mobile dropdown */
-                absolute top-full left-0 w-full   /* Positioning for mobile dropdown */
-                bg-black py-4 px-4 text-center shadow-lg z-10 /* Styling for mobile dropdown */
-            ">
-                <li><a href="#" onclick="showSection('home'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">HOME</a></li>
-                <li><a href="#" onclick="showSection('about'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">ABOUT</a></li>
-                <li><a href="#" onclick="showSection('projects'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">PROJECTS</a></li>
-                <li><a href="#" onclick="showSection('contact'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">CONTACT</a></li>
-            </ul>
-        </nav>
-    </header>
+                /* Mobile dropdown specific styling - these will apply when 'hidden' is removed by JS on mobile */
+                flex flex-col space-y-4           /* Vertical stacking and spacing for mobile dropdown */
+                absolute top-full left-0 w-full   /* Positioning for mobile dropdown */
+                bg-black py-4 px-4 text-center shadow-lg z-10 /* Styling for mobile dropdown */
+            ">
+                <li><a href="#" onclick="showSection('home'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">HOME</a></li>
+                <li><a href="#" onclick="showSection('about'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">ABOUT</a></li>
+                <li><a href="#" onclick="showSection('projects'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">PROJECTS</a></li>
+                <li><a href="#" onclick="showSection('contact'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section id="home" class="pt-32 px-6 text-center min-h-screen flex flex-col justify-center items-center">
-        <h2 class="text-5xl md:text-6xl font-extrabold typing text-white mb-4">I'm Prince Johnson</h2>
-        <p class="mt-4 text-gray-300 text-lg md:text-xl">Game Developer | Cybersecurity Learner | Creative Coder</p>
-    </section>
+    <section id="home" class="pt-32 px-6 text-center min-h-screen flex flex-col justify-center items-center">
+        <h2 class="text-5xl md:text-6xl font-extrabold typing text-white mb-4">I'm Prince Johnson</h2>
+        <p class="mt-4 text-gray-300 text-lg md:text-xl">Game Developer | Cybersecurity Learner | Creative Coder</p>
+    </section>
 
-    <section id="about" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-16">
-        <h2 class="text-4xl font-bold mb-8 text-orange-400">About Me</h2>
-        <div class="flex flex-col md:flex-row items-center justify-center max-w-4xl mx-auto gap-8 mb-12">
-            <img src="personal-photo.jpg" alt="Prince Johnson" class="w-48 h-48 rounded-full object-cover mx-auto mb-4 border-4 border-orange-400 shadow-xl" />
-            <div class="md:text-left md:w-1/2">
-                <p class="text-gray-300 text-lg leading-relaxed">
-                    Hello! I'm Prince Johnson, a passionate web developer with a keen interest in crafting interactive games, exploring the depths of cybersecurity, and designing futuristic user interfaces. My journey in tech is driven by curiosity and a desire to build engaging digital experiences.
-                    <br><br>
-                    I thrive on challenges and constantly seek to expand my knowledge, whether it's optimizing game performance or delving into ethical hacking methodologies. My goal is to merge creativity with robust technical solutions to bring innovative ideas to life.
-                </p>
-                <div class="mt-6">
-                    <a href="https://github.com/PRINCE308-HUB" target="_blank" class="text-orange-400 underline hover:no-underline text-xl font-semibold transition-colors duration-300">
-                        <i class="fa-brands fa-github mr-2"></i>GitHub — PRINCE308-HUB
-                    </a>
-                </div>
-            </div>
-        </div>
+    <section id="about" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-16">
+        <h2 class="text-4xl font-bold mb-8 text-orange-400">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center max-w-4xl mx-auto gap-8 mb-12">
+            <img src="personal-photo.jpg" alt="Prince Johnson" class="w-48 h-48 rounded-full object-cover mx-auto mb-4 border-4 border-orange-400 shadow-xl" />
+            <div class="md:text-left md:w-1/2">
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Hello! I'm Prince Johnson, a passionate web developer with a keen interest in crafting interactive games, exploring the depths of cybersecurity, and designing futuristic user interfaces. My journey in tech is driven by curiosity and a desire to build engaging digital experiences.
+                    <br><br>
+                    I thrive on challenges and constantly seek to expand my knowledge, whether it's optimizing game performance or delving into ethical hacking methodologies. My goal is to merge creativity with robust technical solutions to bring innovative ideas to life.
+                </p>
+                <div class="mt-6">
+                    <a href="https://github.com/PRINCE308-HUB" target="_blank" class="text-orange-400 underline hover:no-underline text-xl font-semibold transition-colors duration-300">
+                        <i class="fa-brands fa-github mr-2"></i>GitHub — PRINCE308-HUB
+                    </a>
+                </div>
+            </div>
+        </div>
 
-        <h3 class="text-3xl font-bold mb-8 text-white mt-12">My Skills</h3>
-        <div class="skills-grid max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+        <h3 class="text-3xl font-bold mb-8 text-white mt-12">My Skills</h3>
+        <div class="skills-grid max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-code mr-2"></i>Programming Languages</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fab fa-python mr-2 text-xl"></i> Python</li>
-                    <li><i class="fas fa-wrench mr-2 text-xl"></i> C</li>
-                    <li><i class="fas fa-database mr-2 text-xl"></i> SQL</li>
-                </ul>
-            </div>
+            <div class="skill-category glass-card p-6">
+                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-code mr-2"></i>Programming Languages</h4>
+                <ul class="list-none space-y-2 text-gray-300 text-lg">
+                    <li><i class="fab fa-python mr-2 text-xl"></i> Python</li>
+                    <li><i class="fas fa-wrench mr-2 text-xl"></i> C</li>
+                    <li><i class="fas fa-database mr-2 text-xl"></i> SQL</li>
+                </ul>
+            </div>
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-globe mr-2"></i>Web Development Languages</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fab fa-html5 mr-2 text-xl"></i> HTML</li>
-                    <li><i class="fab fa-js-square mr-2 text-xl"></i> JavaScript</li>
-                    <li><i class="fab fa-css3-alt mr-2 text-xl"></i> CSS</li>
-                </ul>
-            </div>
+            <div class="skill-category glass-card p-6">
+                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-globe mr-2"></i>Web Development Languages</h4>
+                <ul class="list-none space-y-2 text-gray-300 text-lg">
+                    <li><i class="fab fa-html5 mr-2 text-xl"></i> HTML</li>
+                    <li><i class="fab fa-js-square mr-2 text-xl"></i> JavaScript</li>
+                    <li><i class="fab fa-css3-alt mr-2 text-xl"></i> CSS</li>
+                </ul>
+            </div>
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-laptop-code mr-2"></i>Code Editors</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fas fa-file-code mr-2 text-xl"></i> VS Code</li>
-                    <li><i class="fas fa-file-alt mr-2 text-xl"></i> Notepad</li>
-                </ul>
-            </div>
+            <div class="skill-category glass-card p-6">
+                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-laptop-code mr-2"></i>Code Editors</h4>
+                <ul class="list-none space-y-2 text-gray-300 text-lg">
+                    <li><i class="fas fa-file-code mr-2 text-xl"></i> VS Code</li>
+                    <li><i class="fas fa-file-alt mr-2 text-xl"></i> Notepad</li>
+                </ul>
+            </div>
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-paint-brush mr-2"></i>UI/UX Tools</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fas fa-palette mr-2 text-xl"></i> Canva</li>
-                    <li><i class="fas fa-magic mr-2 text-xl"></i> Adobe</li>
-                </ul>
-            </div>
+            <div class="skill-category glass-card p-6">
+                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-paint-brush mr-2"></i>UI/UX Tools</h4>
+                <ul class="list-none space-y-2 text-gray-300 text-lg">
+                    <li><i class="fas fa-palette mr-2 text-xl"></i> Canva</li>
+                    <li><i class="fas fa-magic mr-2 text-xl"></i> Adobe</li>
+                </ul>
+            </div>
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-object-group mr-2"></i>Frontend</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fas fa-wrench mr-2 text-xl"></i> Tailwind CSS</li>
-                    <li><i class="fab fa-react mr-2 text-xl"></i> React</li>
-                </ul>
-            </div>
+            <div class="skill-category glass-card p-6">
+                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-object-group mr-2"></i>Frontend</h4>
+                <ul class="list-none space-y-2 text-gray-300 text-lg">
+                    <li><i class="fas fa-wrench mr-2 text-xl"></i> Tailwind CSS</li>
+                    <li><i class="fab fa-react mr-2 text-xl"></i> React</li>
+                </ul>
+            </div>
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-cloud-upload-alt mr-2"></i>Dev & Deployment / Backend</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fab fa-github mr-2 text-xl"></i> GitHub</li>
-                    <li><i class="fab fa-node-js mr-2 text-xl"></i> Node.js</li>
-                </ul>
-            </div>
+            <div class="skill-category glass-card p-6">
+                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-cloud-upload-alt mr-2"></i>Dev & Deployment / Backend</h4>
+                <ul class="list-none space-y-2 text-gray-300 text-lg">
+                    <li><i class="fab fa-github mr-2 text-xl"></i> GitHub</li>
+                    <li><i class="fab fa-node-js mr-2 text-xl"></i> Node.js</li>
+                </ul>
+            </div>
 
-        </div>
-    </section>
+        </div>
+    </section>
 
-    <section id="projects" class="hidden-section pt-24 px-6 text-center bg-black py-16">
-        <h2 class="text-4xl font-bold mb-8 text-orange-400">My Projects</h2>
-        <p class="text-gray-300 text-lg mb-12">Here are some interactive web games I've built, with more projects on the way!</p>
+    <section id="projects" class="hidden-section pt-24 px-6 text-center bg-black py-16">
+        <h2 class="text-4xl font-bold mb-8 text-orange-400">My Projects</h2>
+        <p class="text-gray-300 text-lg mb-12">Here are some interactive web games I've built, with more projects on the way!</p>
 
-        <div class="projects-grid">
-            <div class="project-card glass-card">
-                <h3 class="text-2xl font-bold mb-4">Tic Tac Toe</h3>
-                <div class="board" id="ticTacToeBoard">
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                    <div class="cell" data-cell></div>
-                </div>
-                <p id="ticMessage" class="message text-lg mt-4 font-semibold"></p>
-                <button id="ticTacToeReset" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 mt-4">Reset Game</button>
-            </div>
+        <div class="projects-grid">
+            <div class="project-card glass-card">
+                <h3 class="text-2xl font-bold mb-4">Tic Tac Toe</h3>
+                <div class="board" id="ticTacToeBoard">
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                </div>
+                <p id="ticMessage" class="message text-lg mt-4 font-semibold"></p>
+                <button id="ticTacToeReset" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 mt-4">Reset Game</button>
+            </div>
 
-            <div class="project-card glass-card">
-                <h3 class="text-2xl font-bold mb-4">Memory Match</h3>
-                <div class="memory-game" id="memoryGame">
-                    </div>
-                <p id="memoryGameMessage" class="message text-lg mt-4 font-semibold"></p>
-                <button id="memoryGameReset" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 mt-4">Reset Game</button>
-            </div>
+            <div class="project-card glass-card">
+                <h3 class="text-2xl font-bold mb-4">Memory Match</h3>
+                <div class="memory-game" id="memoryGame">
+                    </div>
+                <p id="memoryGameMessage" class="message text-lg mt-4 font-semibold"></p>
+                <button id="memoryGameReset" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300 mt-4">Reset Game</button>
+            </div>
 
-            <div class="project-card glass-card">
-                <img src="https://via.placeholder.com/300x200?text=Your+Project+Image" alt="Future Project" class="w-full h-auto rounded-md mb-4 object-cover">
-                <h3 class="text-2xl font-bold mb-2">Coming Soon!</h3>
-                <p class="text-gray-300">Exciting new projects are under development. Stay tuned for more interactive experiences and innovative solutions!</p>
-            </div>
-        </div>
-    </section>
+            <div class="project-card glass-card">
+                <img src="https://via.placeholder.com/300x200?text=Your+Project+Image" alt="Future Project" class="w-full h-auto rounded-md mb-4 object-cover">
+                <h3 class="text-2xl font-bold mb-2">Coming Soon!</h3>
+                <p class="text-gray-300">Exciting new projects are under development. Stay tuned for more interactive experiences and innovative solutions!</p>
+            </div>
+        </div>
+    </section>
 
-    <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-20 md:py-32 flex flex-col items-center justify-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-10 md:mb-16 text-white uppercase tracking-wider">CONTACTS</h2>
+    <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-20 md:py-32 flex flex-col items-center justify-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-10 md:mb-16 text-white uppercase tracking-wider">CONTACTS</h2>
 
-        <div class="flex flex-col items-center space-y-8 md:space-y-10 text-white text-lg md:text-xl">
-            <a href="mailto:prince308j@gmail.com" class="contact-item hover:text-orange-400 transition-colors duration-300">
-                <i class="fas fa-envelope mr-3 text-2xl md:text-3xl"></i>
-                prince308j@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/in/prince-johnson-48a061266/" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
-                <i class="fab fa-linkedin mr-3 text-2xl md:text-3xl"></i>
-                LinkedIn
-            </a>
-            <a href="https://www.instagram.com/prince_308_j/" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
-                <i class="fab fa-instagram mr-3 text-2xl md:text-3xl"></i>
-                @ prince_308_j
-            </a>
-            <a href="https://github.com/PRINCE308-HUB" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
-                <i class="fab fa-github mr-3 text-2xl md:text-3xl"></i>
-                GitHub
-            </a>
-        </div>
-    </section>
+        <div class="flex flex-col items-center space-y-8 md:space-y-10 text-white text-lg md:text-xl">
+            <a href="mailto:prince308j@gmail.com" class="contact-item hover:text-orange-400 transition-colors duration-300">
+                <i class="fas fa-envelope mr-3 text-2xl md:text-3xl"></i>
+                prince308j@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/prince-johnson-48a061266/" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+                <i class="fab fa-linkedin mr-3 text-2xl md:text-3xl"></i>
+                LinkedIn
+            </a>
+            <a href="https://www.instagram.com/prince_308_j/" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+                <i class="fab fa-instagram mr-3 text-2xl md:text-3xl"></i>
+                @ prince_308_j
+            </a>
+            <a href="https://github.com/PRINCE308-HUB" target="_blank" class="contact-item hover:text-orange-400 transition-colors duration-300">
+                <i class="fab fa-github mr-3 text-2xl md:text-3xl"></i>
+                GitHub
+            </a>
+        </div>
+    </section>
 
-    <footer class="bg-blue-950 py-6 text-center text-gray-400 text-sm">
-        &copy; <span id="current-year"></span> Prince Johnson.
-    </footer>
+    <footer class="bg-blue-950 py-6 text-center text-gray-400 text-sm">
+        &copy; <span id="current-year"></span> Prince Johnson.
+    </footer>
 
-    <script>
-        const sections = ['home', 'about', 'projects', 'contact'];
+    <script>
+        const sections = ['home', 'about', 'projects', 'contact'];
 
-        function showSection(id) {
-            // Hide ALL sections first
-            sections.forEach(secId => {
-                const sectionElement = document.getElementById(secId);
-                if (sectionElement) {
-                    sectionElement.classList.add('hidden-section');
-                }
-            });
+        function showSection(id) {
+            // Hide ALL sections first
+            sections.forEach(secId => {
+                const sectionElement = document.getElementById(secId);
+                if (sectionElement) {
+                    sectionElement.classList.add('hidden-section');
+                }
+            });
 
-            // Then, show ONLY the target section
-            const targetSection = document.getElementById(id);
-            if (targetSection) {
-                targetSection.classList.remove('hidden-section');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                history.pushState(null, '', `#${id}`);
-            }
-        }
+            // Then, show ONLY the target section
+            const targetSection = document.getElementById(id);
+            if (targetSection) {
+                targetSection.classList.remove('hidden-section');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                history.pushState(null, '', `#${id}`);
+            }
+        }
 
-        // On page load, check for URL hash to display the correct section
-        document.addEventListener('DOMContentLoaded', () => {
-            const initialHash = window.location.hash.substring(1);
-            if (initialHash && sections.includes(initialHash)) {
-                showSection(initialHash);
-            } else {
-                showSection('home'); // Default to home if no valid hash
-            }
+        // On page load, check for URL hash to display the correct section
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && sections.includes(initialHash)) {
+                showSection(initialHash);
+            } else {
+                showSection('home'); // Default to home if no valid hash
+            }
 
-            // Update footer copyright year
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-    </script>
-    <script src="script.js"></script>
+            // Update footer copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
