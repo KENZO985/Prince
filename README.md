@@ -9,6 +9,7 @@ Welcome to the source code for my personal website: **Hey, I'm Prince Johnson �
 ## 📁 Project Structure
 
 📦 Prince/
+
 ├── index.html
 
 ├── favicon.png
