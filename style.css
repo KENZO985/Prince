@@ -239,3 +239,26 @@
     background-color: #ea580c;
 }
 */
+/* style.css */
+
+/* ... (all your existing CSS code above) ... */
+
+/* --- FIX: Force Desktop Navbar Alignment --- */
+@media (min-width: 768px) { /* This targets screens medium size and wider (desktop) */
+    #main-nav {
+        display: flex !important; /* Ensure it's a flex container */
+        flex-direction: row !important; /* Force horizontal alignment */
+        margin-left: auto !important; /* Push it to the far right */
+        
+        /* Ensure it's positioned correctly for desktop, overriding mobile absolute */
+        position: static !important; 
+        width: auto !important; /* Make it take only content width, not full width */
+
+        /* Clean up any mobile dropdown styling that might persist */
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        text-align: right !important;
+        box-shadow: none !important;
+        background-color: transparent !important; /* Ensure no black background */
+    }
+}
