@@ -94,7 +94,7 @@
 .project-card .project-links a:hover {
     background-color: #f97316; /* Orange hover for buttons */
     transform: translateY(-2px); /* Slight lift on hover */
-}
+    }
 
 /* Tic Tac Toe Game Specific Styles */
 .board {
@@ -246,7 +246,7 @@
         display: flex !important; /* Ensure it's a flex container */
         flex-direction: row !important; /* Force horizontal alignment */
         margin-left: auto !important; /* Push it to the far right */
-
+        
         /* Ensure it's positioned correctly for desktop, overriding mobile absolute */
         position: static !important; 
         width: auto !important; /* Make it take only content width, not full width */
@@ -258,9 +258,4 @@
         box-shadow: none !important;
         background-color: transparent !important; /* Ensure no black background */
     }
-}
-.hidden-section {
-    opacity: 0!important;
-    visibility: hidden!important;
-    pointer-events: none!important;
 }
