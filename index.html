@@ -41,16 +41,12 @@
             </button>
 
             <ul id="main-nav" class="
-                hidden                /* Hidden by default on mobile */
-                md:flex               /* Display as flex on medium screens and up (desktop) */
-                md:space-x-6          /* Horizontal spacing between links on desktop */
-                md:ml-auto            /* PUSHES links to the right on desktop */
-
-                /* Mobile dropdown specific styling - these will apply when 'hidden' is removed by JS on mobile */
-                flex flex-col space-y-4           /* Vertical stacking and spacing for mobile dropdown */
-                absolute top-full left-0 w-full   /* Positioning for mobile dropdown */
-                bg-black py-4 px-4 text-center shadow-lg z-10 /* Styling for mobile dropdown */
-            ">
+    hidden
+    md:flex md:space-x-6 md:ml-auto
+    flex flex-col space-y-4 absolute top-full left-0 w-full bg-black py-4 px-4 text-center shadow-lg z-10
+    list-none /* ADD THIS CLASS TO REMOVE DOTS */
+">
+    </ul>
                 <li><a href="#" onclick="showSection('home'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">HOME</a></li>
                 <li><a href="#" onclick="showSection('about'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">ABOUT</a></li>
                 <li><a href="#" onclick="showSection('projects'); toggleMobileMenu()" class="block py-2 hover:text-orange-400 transition-colors duration-300">PROJECTS</a></li>
