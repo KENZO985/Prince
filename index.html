@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> 
 
     <style>
         /* This rule must be present and correctly defined for sections to hide */
@@ -61,12 +62,12 @@
         </nav>
     </header>
 
-    <section id="home" class="pt-32 px-6 text-center min-h-screen flex flex-col justify-center items-center">
+    <section id="home" class="pt-32 px-6 text-center min-h-screen flex flex-col justify-center items-center" data-aos="fade-up">
         <h2 class="text-5xl md:text-6xl font-extrabold typing text-white mb-4">I'm Prince Johnson</h2>
         <p class="mt-4 text-gray-300 text-lg md:text-xl">Game Developer | Cybersecurity Learner | Creative Coder</p>
     </section>
 
-    <section id="about" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-16">
+    <section id="about" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-16" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-8 text-orange-400">About Me</h2>
         <div class="flex flex-col md:flex-row items-center justify-center max-w-4xl mx-auto gap-8 mb-12">
             <img src="personal-photo.jpg" alt="Prince Johnson" class="w-48 h-48 rounded-full object-cover mx-auto mb-4 border-4 border-orange-400 shadow-xl" />
@@ -85,62 +86,84 @@
         </div>
 
         <h3 class="text-3xl font-bold mb-8 text-white mt-12">My Skills</h3>
-        <div class="skills-grid max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-code mr-2"></i>Programming Languages</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fab fa-python mr-2 text-xl"></i> Python</li>
-                    <li><i class="fas fa-wrench mr-2 text-xl"></i> C</li>
-                    <li><i class="fas fa-database mr-2 text-xl"></i> SQL</li>
-                </ul>
+        <div class="max-w-4xl mx-auto space-y-4">
+            <div data-aos="fade-up">
+                <button class="accordion-header w-full bg-gray-700 text-left px-6 py-3 rounded-md font-semibold text-white flex items-center justify-between">
+                    <span><i class="fas fa-code mr-3"></i>Programming Languages</span>
+                    <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-gray-800 px-6 py-4 text-gray-300 rounded-b-md">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><i class="fab fa-python mr-2"></i> Python</li>
+                        <li><i class="fas fa-wrench mr-2"></i> C</li>
+                        <li><i class="fas fa-database mr-2"></i> SQL</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-globe mr-2"></i>Web Development Languages</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fab fa-html5 mr-2 text-xl"></i> HTML</li>
-                    <li><i class="fab fa-js-square mr-2 text-xl"></i> JavaScript</li>
-                    <li><i class="fab fa-css3-alt mr-2 text-xl"></i> CSS</li>
-                </ul>
+            <div data-aos="fade-up">
+                <button class="accordion-header w-full bg-gray-700 text-left px-6 py-3 rounded-md font-semibold text-white flex items-center justify-between">
+                    <span><i class="fas fa-globe mr-3"></i>Web Development</span>
+                    <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-gray-800 px-6 py-4 text-gray-300 rounded-b-md">
+                    <p class="font-semibold mb-2">Languages</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><i class="fab fa-html5 mr-2"></i> HTML</li>
+                        <li><i class="fab fa-js-square mr-2"></i> JavaScript</li>
+                        <li><i class="fab fa-css3-alt mr-2"></i> CSS</li>
+                    </ul>
+                    <p class="font-semibold mt-3 mb-2">Code Editors</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><i class="fas fa-file-code mr-2"></i> VS Code</li>
+                        <li><i class="fas fa-file-alt mr-2"></i> Notepad</li>
+                    </ul>
+                    <p class="font-semibold mt-3 mb-2">UI/UX Tools</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><i class="fas fa-palette mr-2"></i> Canva</li>
+                        <li><i class="fas fa-magic mr-2"></i> Adobe</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-laptop-code mr-2"></i>Code Editors</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fas fa-file-code mr-2 text-xl"></i> VS Code</li>
-                    <li><i class="fas fa-file-alt mr-2 text-xl"></i> Notepad</li>
-                </ul>
+            <div data-aos="fade-up">
+                <button class="accordion-header w-full bg-gray-700 text-left px-6 py-3 rounded-md font-semibold text-white flex items-center justify-between">
+                    <span><i class="fas fa-object-group mr-3"></i>Frontend</span>
+                    <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-gray-800 px-6 py-4 text-gray-300 rounded-b-md">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><i class="fas fa-wrench mr-2"></i> Tailwind CSS</li>
+                        <li><i class="fab fa-react mr-2"></i> React</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-paint-brush mr-2"></i>UI/UX Tools</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fas fa-palette mr-2 text-xl"></i> Canva</li>
-                    <li><i class="fas fa-magic mr-2 text-xl"></i> Adobe</li>
-                </ul>
+            <div data-aos="fade-up">
+                <button class="accordion-header w-full bg-gray-700 text-left px-6 py-3 rounded-md font-semibold text-white flex items-center justify-between">
+                    <span><i class="fas fa-cloud-upload-alt mr-3"></i>Dev & Deployment / Backend</span>
+                    <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                </button>
+                <div class="accordion-content bg-gray-800 px-6 py-4 text-gray-300 rounded-b-md">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><i class="fab fa-github mr-2"></i> GitHub</li>
+                        <li><i class="fab fa-node-js mr-2"></i> Node.js</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-object-group mr-2"></i>Frontend</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fas fa-wrench mr-2 text-xl"></i> Tailwind CSS</li>
-                    <li><i class="fab fa-react mr-2 text-xl"></i> React</li>
-                </ul>
-            </div>
-
-            <div class="skill-category glass-card p-6">
-                <h4 class="text-2xl font-semibold mb-4 text-orange-400"><i class="fas fa-cloud-upload-alt mr-2"></i>Dev & Deployment / Backend</h4>
-                <ul class="list-none space-y-2 text-gray-300 text-lg">
-                    <li><i class="fab fa-github mr-2 text-xl"></i> GitHub</li>
-                    <li><i class="fab fa-node-js mr-2 text-xl"></i> Node.js</li>
-                </ul>
-            </div>
-
         </div>
+
+        <hr class="w-3/4 border-gray-600 my-12 mx-auto" data-aos="fade-up" />
+
+        <h2 class="text-3xl font-bold text-center mb-6 text-white" data-aos="fade-up">🎯 Goals</h2>
+        <ul class="max-w-3xl mx-auto list-disc list-inside text-gray-300 text-lg space-y-2" data-aos="fade-up">
+            <li>💻 Become a skilled ethical hacker and Cybersecurity analyst</li>
+            <li>🧠 Be a good programmer with strong problem-solving skills</li>
+            <li>🎮 Build and launch an online multiplayer game (FPS or RPG)</li>
+        </ul>
     </section>
 
-    <section id="games" class="hidden-section pt-24 px-6 text-center bg-black py-16">
+    <section id="games" class="hidden-section pt-24 px-6 text-center bg-black py-16" data-aos="fade-up">
         <h2 class="text-4xl font-bold mb-8 text-orange-400">My Games</h2>
         <p class="text-gray-300 text-lg mb-12">Here are some interactive web games I've built, with more coming soon!</p>
 
@@ -178,7 +201,7 @@
         </div>
     </section>
 
-    <section id="projects" class="hidden-section pt-24 px-6 text-center bg-black py-16 min-h-screen flex flex-col justify-center items-center">
+    <section id="projects" class="hidden-section pt-24 px-6 text-center bg-black py-16 min-h-screen flex flex-col justify-center items-center" data-aos="fade-up">
         <i class="fas fa-triangle-exclamation text-6xl text-orange-400 mb-8 animate-pulse"></i>
         <h2 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Projects Coming Soon</h2>
         <p class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto">
@@ -193,7 +216,7 @@
     </section>
 
 
-    <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-20 md:py-32 flex flex-col items-center justify-center">
+    <section id="contact" class="hidden-section pt-24 px-6 text-center bg-gray-900 py-20 md:py-32 flex flex-col items-center justify-center" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl font-bold mb-10 md:mb-16 text-white uppercase tracking-wider">CONTACTS</h2>
 
         <div class="flex flex-col items-center space-y-8 md:space-y-10 text-white text-lg md:text-xl">
@@ -257,8 +280,63 @@
             // Update footer copyright year
             document.getElementById('current-year').textContent = new Date().getFullYear();
         });
-    </script>
-    <script src="script.js"></script>
 
-</body>
-</html>
+        // --- PASTE THE ENTIRE CONTENT OF YOUR script.js FILE HERE ---
+
+        // --- Tic Tac Toe Game Logic ---
+        const cells = document.querySelectorAll('#ticTacToeBoard .cell'); // Select cells within the specific board
+        const ticMessage = document.getElementById('ticMessage');
+        const ticTacToeResetBtn = document.getElementById('ticTacToeReset');
+
+        let turn = 'X';
+        let gameActive = true;
+        const winCombos = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+            [0, 4, 8], [2, 4, 6]             // Diagonals
+        ];
+
+        function startGame() {
+            cells.forEach(cell => {
+                cell.textContent = ''; // Clear content
+                cell.classList.remove('win'); // Remove any win highlighting
+                cell.removeEventListener('click', handleTTTClick); // Remove old listeners
+                cell.addEventListener('click', handleTTTClick, { once: true }); // Add new listener
+            });
+            ticMessage.textContent = 'Player X\'s Turn'; // Initial message
+            turn = 'X';
+            gameActive = true;
+        }
+
+        function handleTTTClick(e) {
+            const cell = e.target;
+            if (!gameActive || cell.textContent !== '') return; // Prevent clicking if game over or cell already filled
+
+            cell.textContent = turn;
+
+            if (checkWin(turn)) {
+                ticMessage.textContent = `Player ${turn} wins!`;
+                gameActive = false;
+                highlightWinningCells(turn);
+                return;
+            }
+
+            if (checkDraw()) {
+                ticMessage.textContent = 'Draw!';
+                gameActive = false;
+                return;
+            }
+
+            turn = (turn === 'X') ? 'O' : 'X';
+            ticMessage.textContent = `Player ${turn}'s Turn`;
+        }
+
+        function checkWin(currentTurn) {
+            return winCombos.some(combo => {
+                return combo.every(index => {
+                    return cells[index].textContent === currentTurn;
+                });
+            });
+        }
+
+        function check
